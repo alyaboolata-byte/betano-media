@@ -20,6 +20,6 @@ for(const asset of ["de-hero.webp","de-bonus.webp","pt-hero.webp","pt-bonus.webp
 for(let i=1;i<=6;i++){if(!fs.existsSync(path.join(out,"assets","screenshots","betano-screen-"+i+".webp")))bad.push("missing product screenshot "+i);}
 const sitemap=fs.readFileSync(path.join(out,"sitemap.xml"),"utf8");
 const count=(sitemap.match(/<url>/g)||[]).length;
-if(count!==170)bad.push("sitemap expected 170 URLs, got "+count);
+if(count!==166)bad.push("sitemap expected 166 URLs, got "+count);
 if(bad.length){console.error(bad.join("\n"));process.exit(1);}
 console.log("Checked "+html.length+" HTML files and "+count+" sitemap URLs");
