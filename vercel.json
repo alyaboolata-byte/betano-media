@@ -1,22 +1,23 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": true,
   "redirects": [
-    { "source": "/de/chile/:path*", "destination": "/de/", "permanent": true },
-    { "source": "/de/argentina/:path*", "destination": "/de/", "permanent": true },
-    { "source": "/pt/chile/:path*", "destination": "/pt/", "permanent": true },
-    { "source": "/pt/argentina/:path*", "destination": "/pt/", "permanent": true }
+    { "source": "/de/chile/", "destination": "/de/", "permanent": true },
+    { "source": "/de/argentina/", "destination": "/de/", "permanent": true },
+    { "source": "/pt/chile/", "destination": "/pt/", "permanent": true },
+    { "source": "/pt/argentina/", "destination": "/pt/", "permanent": true }
   ],
   "headers": [
     {
-      "source": "/assets/:path*",
+      "source": "/assets/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
         { "key": "X-Content-Type-Options", "value": "nosniff" }
       ]
     },
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "headers": [
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
