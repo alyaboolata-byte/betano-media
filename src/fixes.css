@@ -1,1 +1,9 @@
 .brand img,.hero-logo,.final-cta img,.footer img{height:auto}
+.mobile-offer-bar{display:none}
+@media(max-width:900px){
+ body.has-mobile-offer{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+ .mobile-offer-bar.is-visible{position:fixed;z-index:80;left:0;right:0;bottom:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.22fr);gap:9px;padding:10px max(14px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px));background:rgba(10,12,14,.96);border-top:1px solid #30353b;box-shadow:0 -12px 34px rgba(0,0,0,.3);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+ .mobile-offer-bar a{min-width:0;min-height:48px;display:flex;align-items:center;justify-content:center;padding:11px 10px;border-radius:11px;font-size:14px;font-weight:850;line-height:1.15;text-align:center}
+ .mobile-login{color:#fff;border:1px solid #50565e;background:#1b1f23}
+ .mobile-register{color:#fff;border:1px solid #ff5a19;background:linear-gradient(120deg,#ed3f00,#ff681f);box-shadow:0 8px 22px rgba(255,78,14,.22)}
+}

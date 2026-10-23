@@ -9,7 +9,7 @@ de:{
  eyebrow:"BETANO DEUTSCHLAND · AKTUELLER PRODUKTÜBERBLICK",
  h1:"Betano Deutschland: Sportwetten, Bonus, App und Login",
  lead:"Hier findest du keinen oberflächlichen Markensteckbrief, sondern den kompletten Weg durch das deutsche Betano-Angebot: vom offiziellen Zugang und der Registrierung über Sportwetten, Livewetten und Bet Builder bis zu Bonus, App, Zahlungen, Casino und Support.",
- primary:"Betano öffnen",secondary:"Zum Schnellcheck",notice:"Stand: 23. Oktober 2026 · Konditionen können sich ändern",
+ primary:"Betano öffnen",secondary:"Zum Schnellcheck",
  stats:[["100 % bis 80 €","Einzahlungsbonus laut aktueller Angebotsdarstellung"],["20 € Freiwette","Neukundenangebot laut offizieller App-Beschreibung"],["5 Mio.+","Downloads der offiziellen Android-App"],["Kaizen Gaming","Unternehmen hinter der Marke"]],
  promos:[
   ["DE BONUS","100 % bis 80 €","Bonusbedingungen, Mindestquote und Umsatzanforderungen vor der Aktivierung vollständig prüfen.","bonus"],
@@ -80,7 +80,7 @@ pt:{
  eyebrow:"BETANO BRASIL · APOSTAS, BÔNUS E APLICATIVO",
  h1:"Betano Brasil: apostas, bônus, aplicativo e login",
  lead:"Um conteúdo completo sobre a Betano no Brasil: site, cadastro, bônus, código promocional, apostas ao vivo, aplicativo, PIX, saque, cassino, segurança e atendimento — com telas reais do produto em português brasileiro.",
- primary:"Acessar Betano",secondary:"Ver análise completa",notice:"Atualizado em 23 de outubro de 2026 · Conteúdo para o Brasil",
+ primary:"Acessar Betano",secondary:"Ver análise completa",
  stats:[["Mercado","Brasil e principais competições nacionais"],["Marca global","Operada pelo grupo Kaizen Gaming"],["Produto","Apostas esportivas, ao vivo, app e cassino"],["Moeda local","Real brasileiro · PIX"]],
  promos:[
   ["BÔNUS BRASIL","Oferta e código","Compare valor, depósito, rollover, cotação mínima, prazo e regras de saque.","bonus"],
@@ -174,7 +174,7 @@ export function renderMarketHome(lang){
  const faq=d.faq.map(([q,a])=>`<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("");
  const faqSchema=JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":d.faq.map(([q,a])=>({"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}}))});
  return `<main id="content" class="market market-${lang}">
- <section class="market-hero"><img class="market-hero-bg" src="${d.hero}" width="1600" height="900" fetchpriority="high" alt=""><div class="wrap market-hero-inner"><div class="market-copy"><span class="market-eyebrow"><i>${d.flag}</i>${esc(d.eyebrow)}</span><img class="hero-logo" src="/assets/betano-logo.webp" width="410" height="91" alt="Betano"><h1>${esc(d.h1)}</h1><p>${esc(d.lead)}</p><div class="hero-actions"><a class="btn orange" href="${A}" rel="nofollow sponsored noopener">${esc(d.primary)}</a><a class="btn glass" href="#kurzcheck">${esc(d.secondary)}</a></div><small>${esc(d.notice)}</small></div></div></section>
+ <section class="market-hero"><img class="market-hero-bg" src="${d.hero}" width="1600" height="900" fetchpriority="high" alt=""><div class="wrap market-hero-inner"><div class="market-copy"><span class="market-eyebrow"><i>${d.flag}</i>${esc(d.eyebrow)}</span><img class="hero-logo" src="/assets/betano-logo.webp" width="410" height="91" alt="Betano"><h1>${esc(d.h1)}</h1><p>${esc(d.lead)}</p><div class="hero-actions"><a class="btn orange" href="${A}" rel="nofollow sponsored noopener">${esc(d.primary)}</a><a class="btn glass" href="#kurzcheck">${esc(d.secondary)}</a></div></div></div></section>
  <section class="market-stats"><div class="wrap">${d.stats.map(([a,b])=>`<div><strong>${esc(a)}</strong><span>${esc(b)}</span></div>`).join("")}</div></section>
  <section class="promo-section"><div class="wrap"><div class="rail-head"><div><span class="section-kicker">${lang==="de"?"AKTUELL & LOKAL":"BRASIL · PRODUTO LOCAL"}</span><h2>${lang==="de"?"Bonus, App und Livewetten auf einen Blick":"Bônus, PIX e aplicativo em destaque"}</h2></div><p>${lang==="de"?"Drei Einstiege, die direkt zu den meistgesuchten Themen führen.":"Os caminhos mais buscados da Betano Brasil com contexto, telas e termos brasileiros."}</p></div><div class="promo-rail">${promos}</div></div></section>
  <div class="wrap market-layout"><aside class="market-toc"><strong>${lang==="de"?"Inhalt":"Nesta página"}</strong><nav>${d.toc.map(([id,n])=>`<a href="#${id}">${esc(n)}</a>`).join("")}</nav><a class="toc-cta" href="${A}" rel="nofollow sponsored noopener">${esc(d.primary)}</a></aside><article class="market-article">

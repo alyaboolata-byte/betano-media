@@ -15,7 +15,10 @@ for(const lang of ["de","pt"]){
  if(words<1800)bad.push(lang+": homepage is too thin, got "+words+" words");
  if(!s.includes("https://r1wbjhb.com/?p=9n57"))bad.push(lang+": affiliate URL missing");
  if(!s.includes('FAQPage'))bad.push(lang+": FAQ schema missing");
+ if(!s.includes('class="mobile-offer-bar"'))bad.push(lang+": mobile offer bar missing");
+ if((s.match(/class="mobile-(?:login|register)"/g)||[]).length!==2)bad.push(lang+": mobile offer bar must contain two links");
 }
+for(const f of html){const s=fs.readFileSync(f,"utf8");if(/Stand: 23\. Oktober 2026|Atualizado em 23 de outubro de 2026|Inhalt geprüft am 23\.10\.2026|Conteúdo revisado em 23\/10\/2026|© 2026 betano\.media ·/.test(s))bad.push(f+": visible review date remains");}
 for(const asset of ["de-hero.webp","de-bonus.webp","pt-hero.webp","pt-bonus.webp","pt-hero-br.webp","pt-bonus-br.webp"]){if(!fs.existsSync(path.join(out,"assets","banners",asset)))bad.push("missing banner "+asset);}
 for(let i=1;i<=6;i++){if(!fs.existsSync(path.join(out,"assets","screenshots","betano-screen-"+i+".webp")))bad.push("missing product screenshot "+i);}
 const sitemap=fs.readFileSync(path.join(out,"sitemap.xml"),"utf8");
