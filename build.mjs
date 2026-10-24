@@ -165,6 +165,7 @@ const urls=[];for(const lang of Object.keys(L)){urls.push(url(lang));for(const k
 fs.writeFileSync(path.join(out,"sitemap.xml"),'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+urls.map(u=>'<url><loc>'+u+'</loc><lastmod>2026-10-24</lastmod></url>').join("")+'</urlset>');
 fs.writeFileSync(path.join(out,"robots.txt"),'User-agent: *\nAllow: /\nSitemap: '+domain+'/sitemap.xml\n');
 fs.writeFileSync(path.join(out,"indexnow-key.txt"),"betano-media-2026-indexnow");
+fs.writeFileSync(path.join(out,"BingSiteAuth.xml"),'<?xml version="1.0"?><users><user>0DE36A8DCEE7B75181435A6ED39F3AAC</user></users>');
 fs.writeFileSync(path.join(out,"404.html"),homeHtml("en").replace('<meta name="robots" content="index,follow,max-image-preview:large">','<meta name="robots" content="noindex,follow">'));
 fs.writeFileSync(path.join(out,"_headers"),'/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n/*.html\n  Cache-Control: public, max-age=0, must-revalidate\n');
 console.log("Built "+urls.length+" indexable pages in "+Object.keys(L).length+" languages");
