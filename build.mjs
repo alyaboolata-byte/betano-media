@@ -20,7 +20,7 @@ if(fs.existsSync(path.join(root,"assets","og")))fs.cpSync(path.join(root,"assets
 const affiliate="https://r1wbjhb.com/?p=9n57";
 const domain="https://betano.media";
 const assetVersion="20261025-2";
-const googleVerification='<meta name="google-site-verification" content="2YuDynybzfzs2Ez7LLfH38_fbhQMXISIvYx28pkqW9g">';
+const googleVerification='<meta name="msvalidate.01" content="0DE36A8DCEE7B75181435A6ED39F3AAC"><meta name="google-site-verification" content="2YuDynybzfzs2Ez7LLfH38_fbhQMXISIvYx28pkqW9g">';
 
 const L={
 ru:{name:"Русский",dir:"ltr",home:"Betano",company:"Компания",sports:"Ставки",casino:"Казино",app:"Приложение",login:"Вход",bonus:"Бонусы",payments:"Платежи",register:"Регистрация",official:"Официальный сайт",menu:"Меню",close:"Закрыть",updated:"Материал проверен",read:"Подробнее",why:"Что важно знать",facts:"Коротко о разделе",steps:"Как это работает",faq:"Частые вопросы",related:"Продолжить изучение",hero:"Betano: ставки, казино и доступ к платформе",lead:"Практический разбор Betano: кому принадлежит бренд, как устроены ставки и казино, где искать вход, приложение и региональные версии.",status:"17 языковых версий",focus:"Ставки и казино",regions:"Чили и Аргентина",cta:"Перейти на Betano",ctaText:"Открой официальный сайт, чтобы проверить доступность продукта и актуальные условия для своего региона.",about:"Полезная информация без повторов и рекламного шума."},
@@ -168,3 +168,5 @@ fs.writeFileSync(path.join(out,"indexnow-key.txt"),"betano-media-2026-indexnow")
 fs.writeFileSync(path.join(out,"404.html"),homeHtml("en").replace('<meta name="robots" content="index,follow,max-image-preview:large">','<meta name="robots" content="noindex,follow">'));
 fs.writeFileSync(path.join(out,"_headers"),'/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n/*.html\n  Cache-Control: public, max-age=0, must-revalidate\n');
 console.log("Built "+urls.length+" indexable pages in "+Object.keys(L).length+" languages");
+
+fs.writeFileSync(path.join(out,"yandex_bea560e5ef2d0c67.html"),"<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"></head><body>Verification: bea560e5ef2d0c67</body></html>");
