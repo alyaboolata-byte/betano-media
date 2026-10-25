@@ -3,6 +3,8 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "redirects": [
+    { "source": "/", "destination": "/de/", "permanent": true },
+    { "source": "/index.html", "destination": "/de/", "permanent": true },
     { "source": "/de/chile/", "destination": "/de/", "permanent": true },
     { "source": "/de/argentina/", "destination": "/de/", "permanent": true },
     { "source": "/pt/chile/", "destination": "/pt/", "permanent": true },
@@ -27,3 +29,4 @@
     }
   ]
 }
+

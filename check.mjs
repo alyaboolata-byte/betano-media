@@ -4,9 +4,10 @@ const out=path.resolve("dist");
 const files=[];
 function walk(d){for(const e of fs.readdirSync(d,{withFileTypes:true})){const p=path.join(d,e.name);e.isDirectory()?walk(p):files.push(p);}}
 walk(out);
-const html=files.filter(f=>f.endsWith(".html"));
+const html=files.filter(f=>f.endsWith(".html")&&!path.basename(f).startsWith("yandex_"));
 let bad=[];
-for(const f of html){const s=fs.readFileSync(f,"utf8");const isRoot=f===path.join(out,"index.html");for(const needle of ["<title>","canonical","hreflang","og:image","application/ld+json"]){if(!isRoot&&!s.includes(needle))bad.push(f+": "+needle);}if(/😀|🎰|✅|⭐|🔥|🎁/.test(s))bad.push(f+": emoji");}
+for(const f of html){const s=fs.readFileSync(f,"utf8");for(const needle of ["<title>","canonical","hreflang","og:image","application/ld+json"]){if(!s.includes(needle))bad.push(f+": "+needle);}if(/😀|🎰|✅|⭐|🔥|🎁/.test(s))bad.push(f+": emoji");}
+if(fs.existsSync(path.join(out,"index.html")))bad.push("root index.html must not exist; Vercel redirects / to /de/");
 for(const lang of ["de","pt"]){
  const file=path.join(out,lang,"index.html"),s=fs.readFileSync(file,"utf8");
  const screenshots=(s.match(/(?:betano-screen-[1-6]|betano-br-[a-z-]+)\.(?:webp|jpg)/g)||[]).length;
@@ -24,5 +25,8 @@ for(let i=1;i<=6;i++){if(!fs.existsSync(path.join(out,"assets","screenshots","be
 const sitemap=fs.readFileSync(path.join(out,"sitemap.xml"),"utf8");
 const count=(sitemap.match(/<url>/g)||[]).length;
 if(count!==166)bad.push("sitemap expected 166 URLs, got "+count);
+if((sitemap.match(/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/g)||[]).length!==count)bad.push("every sitemap URL must have a valid lastmod");
+if(!fs.existsSync(path.join(out,"4e7db1d1c6f24e98a73c42c699f5eb41.txt")))bad.push("standard IndexNow key file missing");
 if(bad.length){console.error(bad.join("\n"));process.exit(1);}
 console.log("Checked "+html.length+" HTML files and "+count+" sitemap URLs");
+

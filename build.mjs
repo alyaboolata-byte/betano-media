@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import crypto from "node:crypto";
 import {marketMeta,renderMarketHome} from "./src/market-home.mjs";
 import {marketPageMeta,renderMarketPage} from "./src/market-pages.mjs";
 
@@ -20,6 +21,7 @@ if(fs.existsSync(path.join(root,"assets","og")))fs.cpSync(path.join(root,"assets
 const affiliate="https://r1wbjhb.com/?p=9n57";
 const domain="https://betano.media";
 const assetVersion="20261025-2";
+const indexNowKey="4e7db1d1c6f24e98a73c42c699f5eb41";
 const googleVerification='<meta name="msvalidate.01" content="0DE36A8DCEE7B75181435A6ED39F3AAC"><meta name="google-site-verification" content="2YuDynybzfzs2Ez7LLfH38_fbhQMXISIvYx28pkqW9g">';
 
 const L={
@@ -132,7 +134,7 @@ function faq(lang,key){const t=L[lang],p=getText(key,lang);const q=[
 ];return '<div class="faq">'+q.map(([a,b])=>'<details><summary>'+esc(a)+'</summary><p>'+esc(b)+'</p></details>').join("")+'</div>';}
 function cta(t){return '<div class="cta-band"><div><h2>'+esc(t.cta)+'</h2><p>'+esc(t.ctaText)+'</p></div><a class="btn" href="'+affiliate+'" rel="nofollow sponsored noopener">'+esc(t.register)+'</a></div>';}
 function related(lang,key){const t=L[lang];return '<div class="cards">'+linkMap(key).map(k=>'<a class="link-card" href="'+href(lang,k)+'"><div><h3>'+esc((k==="chile"?"Betano Chile":k==="argentina"?"Betano Argentina":t[k]))+'</h3><p>'+esc(getText(k,lang)[2])+'</p></div><b>→</b></a>').join("")+'</div>';}
-function schema(lang,key,title,desc){const graph=[{"@type":"WebPage","@id":url(lang,key)+"#page","url":url(lang,key),"name":title,"description":desc,"inLanguage":localeCode(lang),"dateModified":"2026-10-24","isPartOf":{"@id":domain+"/#website"}},{"@type":"WebSite","@id":domain+"/#website","url":domain+"/","name":"betano.media"}];if(key)graph.push({"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Betano","item":url(lang)},{"@type":"ListItem","position":2,"name":title,"item":url(lang,key)}]});return JSON.stringify({"@context":"https://schema.org","@graph":graph});
+function schema(lang,key,title,desc){const graph=[{"@type":"WebPage","@id":url(lang,key)+"#page","url":url(lang,key),"name":title,"description":desc,"inLanguage":localeCode(lang),"isPartOf":{"@id":domain+"/#website"}},{"@type":"WebSite","@id":domain+"/#website","url":domain+"/","name":"betano.media"}];if(key)graph.push({"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Betano","item":url(lang)},{"@type":"ListItem","position":2,"name":title,"item":url(lang,key)}]});return JSON.stringify({"@context":"https://schema.org","@graph":graph});
 }
 function shell(lang,key,title,desc,body){const t=L[lang],canonical=url(lang,key),market=marketMeta(lang),og=market?domain+'/assets/og/'+lang+'.jpg':domain+'/assets/og/'+lang+'.svg',ogType=market?'image/jpeg':'image/svg+xml',skip=lang==="de"?"Zum Inhalt":lang==="pt"?"Ir para o conteúdo":"Skip";return '<!doctype html><html lang="'+localeCode(lang)+'" dir="'+t.dir+'"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'+googleVerification+'<title>'+esc(title)+'</title><meta name="description" content="'+esc(desc)+'"><link rel="canonical" href="'+canonical+'">'+hreflangs(key)+'<link rel="icon" href="/assets/favicon.png"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:site_name" content="betano.media"><meta property="og:locale" content="'+ogLocale(lang)+'"><meta property="og:url" content="'+canonical+'"><meta property="og:title" content="'+esc(title)+'"><meta property="og:description" content="'+esc(desc)+'"><meta property="og:image" content="'+og+'"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:type" content="'+ogType+'"><meta property="og:image:alt" content="'+esc(t.hero)+'"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="'+esc(title)+'"><meta name="twitter:description" content="'+esc(desc)+'"><meta name="twitter:image" content="'+og+'"><link rel="stylesheet" href="/assets/styles.css?v='+assetVersion+'"><script type="application/ld+json">'+schema(lang,key,title,desc)+'</script></head><body><a class="skip" href="#content">'+esc(skip)+'</a>'+header(lang,key)+body+footer(lang)+mobileOfferBar(lang)+'<script src="/assets/app.js?v='+assetVersion+'" defer></script></body></html>';}
 function pageHtml(lang,key){const marketPage=marketPageMeta(lang,key);if(marketPage)return shell(lang,key,marketPage.title,marketPage.desc,renderMarketPage(lang,key));const t=L[lang],p=getText(key,lang);const title=p[0]+" | Betano · "+t.name,desc=p[1];const keyName=key==="chile"?"Betano Chile":key==="argentina"?"Betano Argentina":t[key];const body='<main id="content"><div class="wrap breadcrumb"><a href="'+href(lang)+'">Betano</a> / '+esc(keyName)+'</div><section class="page-hero"><div class="wrap"><span class="eyebrow">'+esc(t[key]||keyName)+'</span><h1>'+esc(p[0])+'</h1><p class="lead">'+esc(p[1])+'</p><div class="hero-actions"><a class="btn orange" href="'+affiliate+'" rel="nofollow sponsored noopener">'+esc(t.official)+'</a><a class="btn ghost" href="#details">'+esc(t.read)+'</a></div></div></section><section class="section white" id="details"><div class="wrap article-grid"><article class="prose"><h2>'+esc(t.why)+'</h2><p>'+esc(p[1])+'</p><p>'+esc(p[2])+'</p><h2>'+esc(t.facts)+'</h2><table class="facts"><tr><th>Betano</th><td>'+esc(t.focus)+'</td></tr><tr><th>'+esc(t.company)+'</th><td>Kaizen Gaming</td></tr><tr><th>'+esc(t.regions)+'</th><td>Betano Chile · Betano Argentina</td></tr><tr><th>'+esc(t.app)+'</th><td>Android · iOS · Mobile web</td></tr></table><h2>'+esc(t.steps)+'</h2><div class="steps"><div class="step"><div><strong>'+esc(t.official)+'</strong><p>'+esc(t.ctaText)+'</p></div></div><div class="step"><div><strong>'+esc(t[key]||keyName)+'</strong><p>'+esc(p[2])+'</p></div></div><div class="step"><div><strong>'+esc(t.facts)+'</strong><p>'+esc(p[1])+'</p></div></div></div><h2>'+esc(t.faq)+'</h2>'+faq(lang,key)+'</article><aside class="side"><div class="side-card"><h3>'+esc(t.cta)+'</h3><p>'+esc(t.ctaText)+'</p><a class="btn orange" href="'+affiliate+'" rel="nofollow sponsored noopener">'+esc(t.register)+'</a></div><div class="side-card"><h3>'+esc(t.related)+'</h3>'+linkMap(key).slice(0,4).map(k=>'<a href="'+href(lang,k)+'">'+esc((k==="chile"?"Betano Chile":k==="argentina"?"Betano Argentina":t[k]))+' →</a><br>').join("")+'</div></aside></div></section><section class="section"><div class="wrap"><div class="section-head"><h2>'+esc(t.related)+'</h2><p>'+esc(t.about)+'</p></div>'+related(lang,key)+cta(t)+'</div></section></main>';return shell(lang,key,title,desc,body);}
@@ -159,15 +161,28 @@ for(const [lang,t] of Object.entries(L)){
  fs.writeFileSync(path.join(out,"assets","og",lang+".svg"),svg);
 }
 
-const rootIndex='<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,follow"><meta name="viewport" content="width=device-width,initial-scale=1">'+googleVerification+'<title>Betano</title><link rel="canonical" href="'+domain+'/en/"><script>var s=["ru","pl","en","pt","uk","hi","uz","kk","tg","de","it","es","tr","az","hy","ro-MD","fr"];var l=(navigator.language||"en").toLowerCase();var m=s.find(function(x){return l===x.toLowerCase()||l.startsWith(x.toLowerCase()+"-")})||"en";location.replace("/"+m+"/");</script><noscript><meta http-equiv="refresh" content="0;url=/en/"></noscript></head><body><a href="/en/">English</a></body></html>';
-fs.writeFileSync(path.join(out,"index.html"),rootIndex);
 const urls=[];for(const lang of Object.keys(L)){urls.push(url(lang));for(const key of pages){if((["de","pt"].includes(lang))&&(["chile","argentina"].includes(key)))continue;urls.push(url(lang,key));}}
-fs.writeFileSync(path.join(out,"sitemap.xml"),'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+urls.map(u=>'<url><loc>'+u+'</loc><lastmod>2026-10-24</lastmod></url>').join("")+'</urlset>');
+const statePath=path.join(root,"seo-page-state.json");
+let previous={pages:{}};
+try{previous=JSON.parse(fs.readFileSync(statePath,"utf8"));}catch{}
+const today=new Date().toISOString().slice(0,10);
+const next={version:1,pages:{}};
+for(const u of urls){
+ const rel=new URL(u).pathname.replace(/^\//,"");
+ const htmlPath=path.join(out,rel,"index.html");
+ const hash=crypto.createHash("sha256").update(fs.readFileSync(htmlPath)).digest("hex");
+ const old=previous.pages?.[u];
+ next.pages[u]={hash,lastmod:old?.hash===hash&&old?.lastmod?old.lastmod:today};
+}
+fs.writeFileSync(statePath,JSON.stringify(next,null,2)+"\n");
+fs.writeFileSync(path.join(out,"sitemap.xml"),'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+urls.map(u=>'<url><loc>'+u+'</loc><lastmod>'+next.pages[u].lastmod+'</lastmod></url>').join("")+'</urlset>');
 fs.writeFileSync(path.join(out,"robots.txt"),'User-agent: *\nAllow: /\nSitemap: '+domain+'/sitemap.xml\n');
-fs.writeFileSync(path.join(out,"indexnow-key.txt"),"betano-media-2026-indexnow");
+fs.writeFileSync(path.join(out,"indexnow-key.txt"),indexNowKey);
+fs.writeFileSync(path.join(out,indexNowKey+".txt"),indexNowKey);
 fs.writeFileSync(path.join(out,"BingSiteAuth.xml"),'<?xml version="1.0"?><users><user>0DE36A8DCEE7B75181435A6ED39F3AAC</user></users>');
 fs.writeFileSync(path.join(out,"404.html"),homeHtml("en").replace('<meta name="robots" content="index,follow,max-image-preview:large">','<meta name="robots" content="noindex,follow">'));
 fs.writeFileSync(path.join(out,"_headers"),'/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n/*.html\n  Cache-Control: public, max-age=0, must-revalidate\n');
 console.log("Built "+urls.length+" indexable pages in "+Object.keys(L).length+" languages");
 
 fs.writeFileSync(path.join(out,"yandex_bea560e5ef2d0c67.html"),"<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"></head><body>Verification: bea560e5ef2d0c67</body></html>");
+
