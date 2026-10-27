@@ -3,6 +3,7 @@ import path from "node:path";
 import crypto from "node:crypto";
 import {marketMeta,renderMarketHome} from "./src/market-home.mjs";
 import {marketPageMeta,renderMarketPage} from "./src/market-pages.mjs";
+import {localizedPages} from "./src/localized-pages.mjs";
 
 const root=process.cwd();
 const out=path.join(root,"dist");
@@ -14,13 +15,14 @@ fs.copyFileSync(path.join(root,"src","app.js"),path.join(out,"assets","app.js"))
 fs.copyFileSync(path.join(root,"assets","logo.webp"),path.join(out,"assets","betano-logo.webp"));
 fs.copyFileSync(path.join(root,"assets","favicon.png"),path.join(out,"assets","favicon.png"));
 fs.cpSync(path.join(root,"assets","banners"),path.join(out,"assets","banners"),{recursive:true});
+fs.cpSync(path.join(root,"assets","editorial"),path.join(out,"assets","editorial"),{recursive:true});
 fs.cpSync(path.join(root,"assets","screenshots"),path.join(out,"assets","screenshots"),{recursive:true});
 fs.cpSync(path.join(root,"assets","screenshots-br"),path.join(out,"assets","screenshots-br"),{recursive:true});
 if(fs.existsSync(path.join(root,"assets","og")))fs.cpSync(path.join(root,"assets","og"),path.join(out,"assets","og"),{recursive:true});
 
 const affiliate="https://r1wbjhb.com/?p=9n57";
 const domain="https://betano.media";
-const assetVersion="20261025-2";
+const assetVersion="20261027-3";
 const indexNowKey="4e7db1d1c6f24e98a73c42c699f5eb41";
 const googleVerification='<meta name="msvalidate.01" content="0DE36A8DCEE7B75181435A6ED39F3AAC"><meta name="google-site-verification" content="2YuDynybzfzs2Ez7LLfH38_fbhQMXISIvYx28pkqW9g">';
 
@@ -104,6 +106,9 @@ argentina:{
  es:["Betano Argentina: diferencias por provincia","El acceso en Argentina se organiza mediante versiones regionales autorizadas. La ubicación puede determinar dominio, registro, medios de pago y catálogo disponible.","Comprueba provincia y página del operador antes de abrir una cuenta. Para verificación o acceso, utiliza el soporte de la versión regional exacta."]
 }
 };
+for(const [lang,sections] of Object.entries(localizedPages)){
+ for(const [key,copy] of Object.entries(sections))pageText[key][lang]=copy;
+}
 
 const pages=["company","sports","casino","app","login","bonus","payments","chile","argentina"];
 const navKeys=["sports","casino","bonus","app","payments","login"];
@@ -144,12 +149,20 @@ function homeHtml(lang){
  const title=t.hero+" | betano.media",desc=t.lead;
  const features=["company","sports","casino"].map(k=>'<a class="feature" href="'+href(lang,k)+'"><div class="mark">B</div><h3>'+esc(t[k])+'</h3><p>'+esc(getText(k,lang)[1])+'</p></a>').join("");
  const promo=[
-  [t.sports,getText("sports",lang)[2],"/assets/banners/global-hero-v2.webp"],
-  [t.casino,getText("casino",lang)[2],"/assets/screenshots-br/betano-br-casino.webp"],
-  [t.app,getText("app",lang)[2],"/assets/screenshots-br/betano-br-live.webp"]
+  [t.sports,getText("sports",lang)[2],"/assets/editorial/global-football.webp"],
+  [t.casino,getText("casino",lang)[2],"/assets/editorial/global-casino.webp"],
+  [t.app,getText("app",lang)[2],"/assets/editorial/global-mobile-payment.webp"]
  ].map(([name,text,image])=>'<a class="promo-card promo-localized" href="'+affiliate+'" rel="nofollow sponsored noopener" style="--promo:url(\''+image+'\')"><span>BETANO</span><strong>'+esc(name)+'</strong><p>'+esc(text)+'</p><b>'+esc(t.cta)+'</b></a>').join("");
- const shots=["betano-br-live.webp","betano-br-casino.webp","betano-br-criar-aposta.webp","betano-br-cupom.webp","betano-br-conta.webp","betano-br-pix.webp"].map((image,i)=>'<a class="product-shot shot-link" href="'+affiliate+'" rel="nofollow sponsored noopener" aria-label="'+esc(t.cta)+'"><img src="/assets/screenshots-br/'+image+'" loading="lazy" alt="Betano '+esc(t.name)+' '+(i+1)+'"></a>').join("");
- const body='<main id="content" class="market market-global"><section class="market-hero global-hero"><div class="wrap market-hero-inner"><div class="market-copy"><span class="market-eyebrow"><i>'+esc(lang==="ro-MD"?"MD":lang.toUpperCase())+'</i>'+esc(t.name)+'</span><img class="hero-logo" src="/assets/betano-logo.webp" width="410" height="91" alt="Betano"><h1>'+esc(t.hero)+'</h1><p>'+esc(t.lead)+'</p><div class="hero-actions"><a class="btn orange" href="'+affiliate+'" rel="nofollow sponsored noopener">'+esc(t.cta)+'</a><a class="btn glass" href="#overview">'+esc(t.read)+'</a></div></div></div></section><section class="market-stats"><div class="wrap"><div><strong>Betano</strong><span>'+esc(t.focus)+'</span></div><div><strong>'+esc(t.sports)+'</strong><span>'+esc(t.casino)+'</span></div><div><strong>17</strong><span>'+esc(t.status)+'</span></div><div><strong>Web + App</strong><span>'+esc(t.app)+'</span></div></div></section><section class="promo-section" id="overview"><div class="wrap"><div class="rail-head"><div><span class="section-kicker">BETANO</span><h2>'+esc(t.why)+'</h2></div><p>'+esc(t.about)+'</p></div><div class="promo-rail">'+promo+'</div></div></section><section class="section white"><div class="wrap"><div class="section-head"><h2>'+esc(t.why)+'</h2><p>'+esc(t.lead)+'</p></div><div class="grid3">'+features+'</div></div></section><section class="section dark"><div class="wrap"><div class="section-head"><h2>'+esc(t.focus)+'</h2><p>'+esc(t.about)+'</p></div><div class="grid3">'+["sports","casino","app"].map(k=>'<a class="feature" href="'+href(lang,k)+'"><div class="mark">B</div><h3>'+esc(t[k])+'</h3><p>'+esc(getText(k,lang)[2])+'</p></a>').join("")+'</div></div></section><section class="section"><div class="wrap"><div class="section-head"><h2>'+esc(t.regions)+'</h2><p>'+esc(t.about)+'</p></div>'+related(lang,"payments")+cta(t)+'</div></section><section class="section white"><div class="wrap"><div class="section-head"><h2>'+esc(t.faq)+'</h2><p>'+esc(t.ctaText)+'</p></div>'+faq(lang,"company")+'</div></section><section class="screens-section localized-screens"><div class="wrap"><div class="rail-head"><div><span class="section-kicker">BETANO</span><h2>'+esc(t.facts)+' Betano</h2></div><p>'+esc(t.lead)+'</p></div><div class="shots-rail">'+shots+'</div></div></section></main>';
+ const editorialShots=[
+  ["/assets/editorial/global-football.webp",t.sports],
+  ["/assets/editorial/global-casino.webp",t.casino],
+  ["/assets/editorial/global-mobile-payment.webp",t.app],
+  ["/assets/editorial/global-football.webp",t.bonus],
+  ["/assets/editorial/global-casino.webp",t.login],
+  ["/assets/editorial/global-mobile-payment.webp",t.payments]
+ ];
+ const shots=editorialShots.map(([src,label])=>'<a class="product-shot shot-link" href="'+affiliate+'" rel="nofollow sponsored noopener" aria-label="'+esc(t.cta)+'"><img src="'+src+'" loading="lazy" alt="Betano — '+esc(label)+'"></a>').join("");
+ const body='<main id="content" class="market market-global"><section class="market-hero global-hero"><div class="wrap market-hero-inner"><div class="market-copy"><span class="market-eyebrow">'+esc(t.name)+'</span><img class="hero-logo" src="/assets/betano-logo.webp" width="410" height="91" alt="Betano"><h1>'+esc(t.hero)+'</h1><p>'+esc(t.lead)+'</p><div class="hero-actions"><a class="btn orange" href="'+affiliate+'" rel="nofollow sponsored noopener">'+esc(t.cta)+'</a><a class="btn glass" href="#overview">'+esc(t.read)+'</a></div></div></div></section><section class="market-stats"><div class="wrap"><div><strong>Betano</strong><span>'+esc(t.focus)+'</span></div><div><strong>'+esc(t.sports)+'</strong><span>'+esc(t.casino)+'</span></div><div><strong>'+esc(t.official)+'</strong><span>'+esc(t.login)+'</span></div><div><strong>Web + App</strong><span>'+esc(t.app)+'</span></div></div></section><section class="promo-section" id="overview"><div class="wrap"><div class="rail-head"><div><span class="section-kicker">BETANO</span><h2>'+esc(t.why)+'</h2></div><p>'+esc(t.about)+'</p></div><div class="promo-rail">'+promo+'</div></div></section><section class="section white"><div class="wrap"><div class="section-head"><h2>'+esc(t.why)+'</h2><p>'+esc(t.lead)+'</p></div><div class="grid3">'+features+'</div></div></section><section class="section dark"><div class="wrap"><div class="section-head"><h2>'+esc(t.focus)+'</h2><p>'+esc(t.about)+'</p></div><div class="grid3">'+["sports","casino","app"].map(k=>'<a class="feature" href="'+href(lang,k)+'"><div class="mark">B</div><h3>'+esc(t[k])+'</h3><p>'+esc(getText(k,lang)[2])+'</p></a>').join("")+'</div></div></section><section class="section"><div class="wrap"><div class="section-head"><h2>'+esc(t.regions)+'</h2><p>'+esc(t.about)+'</p></div>'+related(lang,"payments")+cta(t)+'</div></section><section class="section white"><div class="wrap"><div class="section-head"><h2>'+esc(t.faq)+'</h2><p>'+esc(t.ctaText)+'</p></div>'+faq(lang,"company")+'</div></section><section class="screens-section localized-screens"><div class="wrap"><div class="rail-head"><div><span class="section-kicker">BETANO</span><h2>'+esc(t.facts)+' Betano</h2></div><p>'+esc(t.lead)+'</p></div><div class="shots-rail">'+shots+'</div></div></section></main>';
  return shell(lang,"",title,desc,body);
 }
 
