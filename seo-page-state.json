@@ -1,669 +1,669 @@
 {
-  "version": 1,
+  "version": 2,
   "pages": {
     "https://betano.media/ru/": {
-      "hash": "251d5a92baa064fdb601b6a16698b6aaa65a0e14ce05a5181ac746231aca732c",
+      "hash": "c4c1627a276eec85b45ce027095308fe54ef7b08e1df57d81b42b04cac5a4770",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/ru/company/": {
-      "hash": "2d001fc79c95b24f06e2953dd9198b3a2edc69ef870293106ff9846a13367a6d",
+      "hash": "a6103e199092186e51a6c8e07ce6d74ca8edf3b6398422ae822adeefb473babd",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/ru/sports/": {
-      "hash": "3dc7ddaaca7ec3d2b46cea6c736b9e5d32d0eb01869d235ff9df8cd42b66a571",
+      "hash": "7da509b2c5181681164fe075fd203c693a2abf2aee648a6cb083c4dd9a5cdd88",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/ru/casino/": {
-      "hash": "a11ef84ea18aa7e815f14df99034c5476c8646d660d928e927bd01d2d4be7b3f",
+      "hash": "f6d2c8f594edc038f62aa3307d750968cad3d6ac03c03bedc0fabc09ac063b8a",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/ru/app/": {
-      "hash": "9221fc47b249fc11e77ec9a445a4948d3758f61f9c83e9b3dc87f7a586bdc849",
+      "hash": "2002c1eb54f96841ee3d333aa69083158265b4a2949ad63a2e1849f29357e729",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/ru/login/": {
-      "hash": "72e65956e95bb682696f0f7654a5286f46757fc237a54533bdf1ce336f9c7a21",
+      "hash": "fea683aa97a1a200786b08cbdfe09c163bf4a7af2cb2950a44ca75d6e64d9cb6",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/ru/bonus/": {
-      "hash": "fefca23284c957235fc820a49c52af7f7f8b6c6c9c285168ffcd94fe6599dd13",
+      "hash": "ff8a343bc6c936f778b95af8a68f64cd68a19e262b58e639cda4ff62ec35230d",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/ru/payments/": {
-      "hash": "7795dd481e2d11550150f59679b2f4b20fe41e154fc714561ed8e982df65c99f",
+      "hash": "a6c339ec46ab348f5418dfb9ec3c2a7023b545ef53478eddbece9208992e0419",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/ru/chile/": {
-      "hash": "3b67cbe2b5a9ab6567e37e090a6d4249f71a6a051769bd8e0b5a9dc9a6fad525",
-      "lastmod": "2026-10-27"
+      "hash": "f13a270bbffd8d8809f0410a7657844a038c840e3ebb3bd9b1d901b2707f72cd",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/ru/argentina/": {
-      "hash": "20bd5cbcb8e0363c823003e9d3efdfb9a4ffea9d6dfd0daf29fba7fa864f8796",
-      "lastmod": "2026-10-27"
+      "hash": "f2b2d803283bc5551ef79bb2eede632613d484068f865c327efacbe378359790",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/en/": {
-      "hash": "6c66d0e59cefc5b022aedfd47172089471bd8c91cab684462a08f6f344e7f579",
+      "hash": "eccc7c3590eb36bfc19c410a8b59b1681fd9fefa5379bf09c7b125aaa4b6e718",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/en/company/": {
-      "hash": "ffda5b85655dd9bea16414552e6df542be7dbec361c5339216d7f96c3ad57e4d",
+      "hash": "bbc09103a6d80d5c29d148fe39acfd2c2ddb230d7052e0d07a8af4fe0be1fa7b",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/en/sports/": {
-      "hash": "d7f7fbe3154389cd94950c9fc97a76f700899bec084e8e0030b6c2371c5657f7",
+      "hash": "5b4b1226820701781518db0622cd487d5c6b31b315e116b10c088ad964db09ae",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/en/casino/": {
-      "hash": "d25b5129c85e2c16df278f91797ce723a1dbee7af644700910f95694dcfd040f",
+      "hash": "d878f8ee6caaa30144a375db69d52d32fea0f882a24c11a3ca960aae9f10847c",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/en/app/": {
-      "hash": "131ae923a760aa243a0ca769ad4085cb4c27d0ad037ac6d79df3fbe8638536fe",
+      "hash": "16948692185ab6c0761e883c9aef80960384dae1024b5e063fc280cbbb21968c",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/en/login/": {
-      "hash": "0b51257ef9a965cad03a9e574655b37dc2a3f6947a7b34de73d929515c778edf",
+      "hash": "78ce9a4b0601a9d7f6d473a2446d4b635d6db0de960d4e138e5b52343c8a5594",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/en/bonus/": {
-      "hash": "22d3978ebead520e454ac699a4415216542a80d88aafd9e2b8ccb17a5e6607ec",
+      "hash": "c40b0d4a82f05d08e938c20a0116c0d71a4db105429ef6e731a1c4ceb130fd92",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/en/payments/": {
-      "hash": "1e9bfbacc2290ed0498a4e8859ce3f54a3e91504a19d45775eb67b1d02624b31",
+      "hash": "d2951adcd40f0c2482651df8ab89f4d5b4f0ec3d272050d5f28f2a4b6f95334c",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/en/chile/": {
-      "hash": "65dcdc8a69d14f93e9362788412aea2ce9108783dce724cb5465a31ba19e1172",
-      "lastmod": "2026-10-27"
+      "hash": "3f5156de206d94aef106a202417a569ac4337a47cd9084012df4a01dcba5fe08",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/en/argentina/": {
-      "hash": "7f8d686ff40759484262d6b9777e6eaf5851991273af26452af96d0a18c051b4",
-      "lastmod": "2026-10-27"
+      "hash": "369dc4e8381d58f52ee708650048976a395d65b330d8a3c05fb8fb983f4ef24a",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/de/": {
-      "hash": "56af87fafd70c05949b52c91d7977c43953ac838e58c349051c810bf71641147",
+      "hash": "fa3d2858da7f959503115885dc35d26cd43fc101fdcdf4cee0ffb6b614bf804c",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/de/company/": {
-      "hash": "50fee97a6967b4d886c60f1a01804eb7486f16382cfa2286b6bf33364cfda385",
+      "hash": "95fbbecfbe99f880084f094241d1ac9950b518bc81248d8909d75d6b35e948e6",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/de/sports/": {
-      "hash": "e8cad665c3c67aaa98113e12d810c4391bcacd8ce5c6d974ec0965fabcebff98",
+      "hash": "6cbb09092c048ee5254c81ee1f96286ff9d84a3ca075739f91b5ebf641e21902",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/de/casino/": {
-      "hash": "32a799ed7591251a39fe7d4b8b587330b05ff90d7f5df2ccb4f04ab282c55b67",
+      "hash": "5b90bed613f74360a6381f8b8dc2bf56a22e1fc4739bde63e6f9853347ddd2f4",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/de/app/": {
-      "hash": "9bd5def5ba2d1759cb97b0936cc6d105d2a7c440f566b001a57a1ef9df8793cf",
+      "hash": "39e5181958434aefa9e4aeb1cb0bbd29c016b6b119e952424f6974acf8e1babc",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/de/login/": {
-      "hash": "3664213604dd0b92345567bda0eeccfc624c484b05a096faa5d932e3967f9371",
+      "hash": "d49cee673e952b438315419266dd93055ebd3b9640f260a7de4a877138c797e6",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/de/bonus/": {
-      "hash": "cdf0194952f3b93f50ad52f2d930bd0a4963c33c44f2aa74e4ae2f7c65a9485b",
+      "hash": "6bf4aa03fbd6c55a8bec6029af676d565c6453603358221175642729b8461755",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/de/payments/": {
-      "hash": "bbeea5d70d23742ce5bf85c46c5f9643f2ffa3da42964da1c88f95dd80bba02b",
+      "hash": "f6b966b9e1c6d4c2163ddb384ea39138b4c7f9c4f62d9f8c9954590a9d16b56b",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/es/": {
-      "hash": "829761ad94eb00f8713a4a4cc6990316cd2f39928bcaff3901e968b9526331de",
+      "hash": "c4d8f45ae80afe38bb85059bce391cfddfa157419a7ee4d3fa6013f4f4714b98",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/es/company/": {
-      "hash": "559a8b87d2305d2920fe26298401096e0172661b961cea9a02fd7ae034f76aa6",
+      "hash": "2a738ed53e1a53274e923b85a6349522f847bed253b8dd1cf0b1520c53943b99",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/es/sports/": {
-      "hash": "1b2673055d3871a1e1fa33da8ec354cbac9b7d734270d9222a66b6c83b538bd6",
+      "hash": "175207342336ebfd1eec0ecaa45d4fa7bb36af9ae65f05b13115441300737cf9",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/es/casino/": {
-      "hash": "18e396d44aeaddecd2dcbf75ae7cfefcc581ecf8b78197c233d9e61177c044e9",
+      "hash": "6a25b4adf401543becd2d1a287d079d3e61d919a2e52dc619d7c98790c5a7ead",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/es/app/": {
-      "hash": "1317083466580d4bb1df1f1406c986a9f714c281fbd5dfc357e73b4b2bcf2956",
+      "hash": "186c8e309b7b9c52650b5a37353e5edf457ce54dd1375fc3865e6dda233179f7",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/es/login/": {
-      "hash": "103abb303fadc368bd8876ac678d36ab8381d3d74c1ff76dcc69fc742baa7c4c",
+      "hash": "39377a614c1b5e18144f457321de1a473d7acc33f4a52f61d7b961dba38ad088",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/es/bonus/": {
-      "hash": "ecfb2ce72252b98b61ce1902abbe590ad96c065dfa402b940b722c2303129394",
+      "hash": "1e08ebe436c2a39cc566d62b95d8a688a57e356019874f25bf5a3a335571c346",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/es/payments/": {
-      "hash": "275a8027b31971e1d04e8ebd0d35d6023d23828333ad0446316f53dab51ab6b4",
+      "hash": "7e4e65569ed5073a7b4bcaf0356e388caa5a060472dfdc8a3232a4f41693955e",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/es/chile/": {
-      "hash": "3bdcbda35980d45b39f1516346cd9387841f4a89dede5a60fe2c66832158c5a0",
-      "lastmod": "2026-10-27"
+      "hash": "f8310d82ed1ab3047b3e5c17531599f698be039c4437c86a987d0fa2871f9b23",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/es/argentina/": {
-      "hash": "b7ce84dae429ed8a15c29b8366269c6756c4fdf5c923acbc6958aedd50fcf7be",
-      "lastmod": "2026-10-27"
+      "hash": "d622cf9bc1c5dd5310198c5f2cc6c3ef88b163182c0c7fad2c6d5af9c37776db",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/pt/": {
-      "hash": "c8f046e3b7f55964418fb2f4526c7938c8f5f6ee510bfbe55538c05d68967abb",
+      "hash": "6fb2f84eb7de5a0ca0483a8945b0db298ae448d7f49ba0ab1740e0f1b566846c",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/pt/company/": {
-      "hash": "543a3e545eb991bd4539882044209a257935aa0c3dd579845a8fe11438218677",
+      "hash": "460a462186ea8139387b2abf3f68d2f93a54cd25067ac904bdf3c85a11061393",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/pt/sports/": {
-      "hash": "50ac6803b66e5c14c3d2f1352da6dfcb888f7b682835b3bb8e83f54e62bd16cc",
+      "hash": "acc133af2bdeae3bb6bae253bc3b01e76280657070d08f82898a9fd17b9a6d31",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/pt/casino/": {
-      "hash": "fc78b840153a7655d51a7447fa2ede00e41de7acfc6781ac582550badbfc8923",
+      "hash": "c11ff5490d1d0048958db8a66e9ea012a08b769d7524c123f3f9e380c73d54e3",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/pt/app/": {
-      "hash": "7b9cea52e97cb187f5fe3ff1c29b215ec8af21542c3f681eb3c46ede41aca730",
+      "hash": "f8b3ff8edf7c28ff18f4d818e0d73219267338a451fa6d3a12b79cad9072b16c",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/pt/login/": {
-      "hash": "d0e683902bc1d76476f8d85857ee35fb456d065b532d8fe869af90c7ece2d371",
+      "hash": "0dff0f38733622ec00329fc6e56472b72431ace729d1b5ff699c492f4edc8091",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/pt/bonus/": {
-      "hash": "427ce50799bb143a74f7fc8898ce74504aaa8c29cb99be1d0beea50cc18f24b2",
+      "hash": "6e4cf6cee4fa28d577f67a323965fe0661e26d120f421f682a2c6d4eb92c1e11",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/pt/payments/": {
-      "hash": "00db077651ebf703de5f5fb788bd6b7c8b6039fcb55a2f5201b48b84a1ddac9b",
+      "hash": "dbda69d05120851ecc0bdcc95f34a976aa44e67c37b35e9dec9833ec7495346a",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/pl/": {
-      "hash": "b5e2bfe2432fa7c245f7f0a113f9f26503495a67b93d38539e1cccabdb35a239",
+      "hash": "af877fb87a83404f70236213516f02650044281fb5c2584aace473e1b3cf410a",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/pl/company/": {
-      "hash": "544525af128573bd4ed89a8f67b407190b00359a8e9eeeaa6867c9bb1b517b8f",
+      "hash": "be9cfebe254a0fa8becc63883b9b825a8250e0a6a5cf217911da26a0969e494d",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/pl/sports/": {
-      "hash": "2c64b5f71ab4bf05adfb96a6f3a7c026ceff42a94424748eb4302ea720dd1643",
+      "hash": "5a4ffe27978bffb63e8d2432a8322b18b2c0cbce72a8844325f989069c8cdfd7",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/pl/casino/": {
-      "hash": "4ea6fee144a4ec38cd9838d6dff56bf8d7925fb4935757fe4e9e6d47be6828c5",
+      "hash": "d73a64851bd70e252d61dd116f321bdd7240bfedee7651b640d27b3a5336efbb",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/pl/app/": {
-      "hash": "3e7c6b1e9ee6fae2f9c9740972ad034e74f45038bd5a412961cbf3a71f8fdcf3",
+      "hash": "438065fcf7e44023c364b3d4a0fb2e95f0d54789e6a18773a77a9e8d97fc440a",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/pl/login/": {
-      "hash": "6a9cf42889a5653032ff205af8718dd6cd7d7bdb1c945661ff342b8e27af9f25",
+      "hash": "28a68a4ebae95c38fd0fd9fbf8b32b6ade94a31f4836a0b81f0487ee265123bb",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/pl/bonus/": {
-      "hash": "375c08b781f2e0611b8f2e628dd81ab63822876a91aa0774cb5fc778b1c9d9c7",
+      "hash": "a6a4acfabed932f13bb7a6629a5c8c74c23ea134678b988e97eee0e7f243e2ec",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/pl/payments/": {
-      "hash": "c0a760017ec4ffc958a23f95be5697d436fb34b5dc7098e8ed6d572274d03f58",
+      "hash": "fd0b54e151b41621b7925971f44a4012dc07044dfd22252597bef133f1006222",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/pl/chile/": {
-      "hash": "dd3df035b404e542300d1bb3aa0cd6113a33a022f40a01b77fb8ebdfd0d5cb34",
-      "lastmod": "2026-10-27"
+      "hash": "739165db3b94fa549e76afdd9fa990563c57018608fa12378a5c2b89a7a5af39",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/pl/argentina/": {
-      "hash": "fe115e8d836e9c6b93cf17f3557e3e8980d176df3b7ed97c64f5e12fd8997c7b",
-      "lastmod": "2026-10-27"
+      "hash": "62a720c50fc2072d824bd80a0f55a0330184f8b4c8d3e9a478c2c4d7ee928a25",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/uk/": {
-      "hash": "89d140e8730d061c6a585b443dd83c941e7f07f54885d89d26d29bb240eb173c",
+      "hash": "048f8b7dff1019cdb3d3d7083c12d670ff2517b88014ab4445310e03313d8d75",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/uk/company/": {
-      "hash": "09e147c698ba86dc6306faac3cedbb9d3fe159c601d7894253a83a834ed479cd",
+      "hash": "8076b477095d9dfe29d035836ac0220eba76ca7e797ee3f82c571159be963cc9",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/uk/sports/": {
-      "hash": "e46a084e59761e7073cb72636dd62f71d5107589573b64d5c0c575a371c2b627",
+      "hash": "bda021a47c3b644d209e069be1e45fdd8f7f9566e2e4bf4b32c9947b751e4b90",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/uk/casino/": {
-      "hash": "20471aad312c1150dfe55244d9f4aaeb3674eda05ec5d72bc8c0519ef83df282",
+      "hash": "3337264c6a739f2b1c149883e4c2204045f578fc385d00b2477ab72c611084e5",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/uk/app/": {
-      "hash": "dc6bdd876559987091afd32ba3cc360e32f60e69385e1d7b52e4ae7bda531056",
+      "hash": "0bbfb0f4c31f66e2b5b97f495fec397c956e4aa137a9757d640e4b554f93bd80",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/uk/login/": {
-      "hash": "9dd1380015427794f1309c75483fae52248dc6fdc3243aed1bc2ec38b897094e",
+      "hash": "889cd53d9b4062afbad3ae0bef76b515a7be7a57945fc1692abe9051fcb490af",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/uk/bonus/": {
-      "hash": "43760ca4410f1d890627bf5c62fd76d71aebaee3116e38d178cecc680b632586",
+      "hash": "6f5b32f8bc6164d15d17837c70082966db70a52ad8ff91ae21320d01a9922bd3",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/uk/payments/": {
-      "hash": "532ab94fbe3d8ccb30b53dbceda6a45e1c5a8516f6125951ae2855108bc25a7b",
+      "hash": "561677a98132549b6fb6b457689c9bc1ac4b3fe1b50644aff99d381ae38f1af9",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/uk/chile/": {
-      "hash": "3447eb810e9abf5bcf9a3ec85fc13830ca925cdc0f3051c19574ec0ff117e7e6",
-      "lastmod": "2026-10-27"
+      "hash": "18931df3cc1b9c400d194b24b847bb87f14845300b32faf48660b9cf9a1d29ff",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/uk/argentina/": {
-      "hash": "ca285c4a561680fea231a362d4494fbb0d07f55e340b6edd02a16a3898391935",
-      "lastmod": "2026-10-27"
+      "hash": "66f31f3092ffdcca861dfd5723c1631d976427e343bade2f467dfcac003974e0",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/it/": {
-      "hash": "dced92d9d150e224450a3057dbb3bde10eacc9aeda318062e781fc6066913de7",
+      "hash": "e854ad71fd4084a3ddd4ae41cf8a9560505044d9eff1503ca873b1256947ad24",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/it/company/": {
-      "hash": "b10817c63e8e67e99a2ab1fdb6991621b1ddf84c8d044a7bdef5828ebf454ad7",
+      "hash": "aa494ba785293d2aa60e8dc04653edbb14d11a86cfd67c7bc2a69826778d7d1f",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/it/sports/": {
-      "hash": "b8e9dfdc4f0f9be1636a712b51102fcf4723b0a519c343234b5264ea1575db64",
+      "hash": "cf70e00ebfa12428cd70d5a36571a192c1aadc32d492ebf3e4c23d770434a6dc",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/it/casino/": {
-      "hash": "7af95d8a0bf9e2170c9f7715f5632bdb29f32f4b9f2be59c5ee562b454b7bd8f",
+      "hash": "e67c12c232221b91b27aaed867a5eaa802bc3ad5f8c0ebbdb0dbce3022d481e9",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/it/app/": {
-      "hash": "eb8e525470412bc5ec26fe4094f9e935fb1416939eb545a1d40fe077a77755d8",
+      "hash": "7a22e6f5e215a37ab414622ae4fc72980d04960fa0a27789ce5315b951931975",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/it/login/": {
-      "hash": "a7d4565b18054e7005c634475a33e206726f72a97dc796b14ae3c9d4c6598e55",
+      "hash": "1e4d10309ff3e38914a656b1adde798a2038715557ee2fa619b169f6bc3554ef",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/it/bonus/": {
-      "hash": "3c2fb751b3fe2200c31635a961510cdd35cb729abc8279430c8410d6d4b541ef",
+      "hash": "f399bfacb3b5bc54ce6ff5db0d2c8db1754295d0d8435e9ee0ebd9937cbda7da",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/it/payments/": {
-      "hash": "5e0b0e2989e6e4cbd790f246b076d066a3bd635eb7b7b9861d7953c77cb80165",
+      "hash": "478df0a75c25177e57c6b0f91b6879068b3ad69bc39cec305305ef711c0827e1",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/it/chile/": {
-      "hash": "6c17abf831362da3243469d3982dc827510292cefaf949fb81b55040156f7eaa",
-      "lastmod": "2026-10-27"
+      "hash": "40e6158476105c309d3e91d1b4c020f2544dcf40de4810345f2c2e0501389773",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/it/argentina/": {
-      "hash": "62b74a787b68c48ee9f6f7b3d7aa5c4d516cdf5b487817c60759a883fd013cb1",
-      "lastmod": "2026-10-27"
+      "hash": "86a4984d6411a0ea401fe2ec980f00ea679b6aaec927b55f8e8709abb0d7c403",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/fr/": {
-      "hash": "b29a7e28e0c97f0da137cfeca930d86dddaea83571bc2750e5155a5d0e9cb58b",
+      "hash": "5b0005a19f010c07f32052dabbb6e783fac564d248c1c299aa3a6d86d8d81f05",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/fr/company/": {
-      "hash": "b9d63913080676ca507088406493d27507054119bdea435dbd558e2b66096b49",
+      "hash": "2369a63d3e8fbdf538cfdc47a4da778450689647064a45b91c9cbb727528e5e2",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/fr/sports/": {
-      "hash": "3c7a36670bda5bffa8540156208720e4d8d650fbc823cc94317b8dcb1fff7937",
+      "hash": "d1cc442b80dd9f60bf5b339e4f9519b9fc863ba8b2dffc73c8f16093769d45ac",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/fr/casino/": {
-      "hash": "21311b14d689025b2dfd92a485cf985ee6766528068fb73fef06e9ce8b4e5c64",
+      "hash": "3ad921d37865ba724dce335091ad887d43ce7885db2ab235d539eb4f158736dd",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/fr/app/": {
-      "hash": "00d8cb5dfb1eaf80cd67d8cf9c8cfc280c5c72331d45a9f779fcbd42af697327",
+      "hash": "9b92bb8b8d33c18b443c300bc6b30bd066a9109eceeb7076e645c5743e92e38c",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/fr/login/": {
-      "hash": "82fa0c1baa71e517004adceb322ba59920d103dee5cfff801d0feb1c53a0b2d0",
+      "hash": "4d1b4db4c0b40bcb2f2ce6b0d7b02773fcc26c85afef48691636c502f378f96a",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/fr/bonus/": {
-      "hash": "3f2958645b1803d66a5a8cae99defef0b5aa23628828326af3f226307208bedf",
+      "hash": "9bc2a5436754b92b73e294ba6026f505ad81644c55d752ec3a32ff7609edc0ad",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/fr/payments/": {
-      "hash": "0cdb62acdc0838283cd0630514955c71bec448b319d316b2cc6850502f86a550",
+      "hash": "eb340b1c5eb83e0786118f26acfb6bd2993bcf1e5bc48575ad684101ce4f098e",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/fr/chile/": {
-      "hash": "e31f7acd4397c99621d67ac7c50293d63ad090a46abb199fd7b1c20fcd0b12b7",
-      "lastmod": "2026-10-27"
+      "hash": "5225d4a912fadd93f69040455629ab182c61a596200bb787631ad6774978e126",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/fr/argentina/": {
-      "hash": "f097c2934d79db905feaf020e332afd29be09ba6ff831b7544d178be22ed3685",
-      "lastmod": "2026-10-27"
+      "hash": "c3c5ae6117b66be7fb7f4f186a6e34648987be16dd136c00ae81a87021b5bcc4",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/tr/": {
-      "hash": "9221b68961a33c7b326c30b4d76fa3a1cd023f3f04ebfbe94c818b48a022a5e1",
+      "hash": "8c201455e4b50f1a28f9a48389f69cb55fa4036aeeda61dd320be9e7c5d25fb7",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/tr/company/": {
-      "hash": "8600020a9b261093fa9908807bfb6b8db4ac298fe24224e48cb7d480bad9504e",
+      "hash": "8a607c575daeb103e02b9300a091e059a973228e29aae9d98c34dc5618282de2",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/tr/sports/": {
-      "hash": "0e9d2aee394e0471c8711197258ca8662919b2741f4482d72e294e177eb4cd2d",
+      "hash": "41c25009c19bdd48dd0ff3d9ec8fd7fe8ccaaaed92ee7869a8867bd8c5122ab1",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/tr/casino/": {
-      "hash": "2e58dceb670ccd65b73bc33deda2d11e56e5d3ebe5e3fbfddce70e1bf9027851",
+      "hash": "5850567129bb866d10f20ca0660c721e25e64cb42fd0c0dfe91ea46ae2fe1679",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/tr/app/": {
-      "hash": "1c26dbf266e013b92251be8f2e68576579a4ec5ada525a5fcadd2cf36fafedf2",
+      "hash": "968aa98f6e62aea86593bb7d00a009effa073288598e59395ac77420deca5720",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/tr/login/": {
-      "hash": "72f4c78d2520d1393cc928efd94e6af00883d8b1491cee291b7cd833e05bcd8d",
+      "hash": "08a4c4e05f545bdf015fd97aba75147932f65cc3ee82cc508965042befd0e108",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/tr/bonus/": {
-      "hash": "2c285499c31df9e31e64742bb9fa090817e9cdbd1ebc0d6560f637798e6cd26a",
+      "hash": "528600d4aed9937bbb0952171e252a918355f0e8a75411a50fa4b3c8580206a4",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/tr/payments/": {
-      "hash": "aba8ba162830cadbc096d9115c5b0a858aca58f3211667165ecf689e76d5ff7c",
+      "hash": "2c7e38ad22b58fb9211e424af6ce6f184aa273eac4df7a67f1bbd41c70bbc53b",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/tr/chile/": {
-      "hash": "091611ae8435b682c818bb77d66603f28a90a4bb84bf42b1076293952548edfd",
-      "lastmod": "2026-10-27"
+      "hash": "0623bdef386549468b2570f572b275ea10cb11c2578ce360afbb9352d8fc6b67",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/tr/argentina/": {
-      "hash": "fbe579bad727eb16ca942bf781889ec658c6c5e216dd1788bde93380ccf76640",
-      "lastmod": "2026-10-27"
+      "hash": "7b94d1732dda827342afff3d75597b7ad9431674f047af71468d15bb733f5453",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/ro-MD/": {
-      "hash": "99c1a693e7330871a9a6262483af2e7f24a8b8e0cce14f62e9a9997b35dbefdf",
+      "hash": "a37444a29b898e72ad758fcf3008d6e4b71aeac25c6413372834232de4e4105e",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/ro-MD/company/": {
-      "hash": "ef11197aca5e93dd9325dbbc75517a593c50012b5da8b9585d60580c907799eb",
+      "hash": "1d3f0d67e5dc2608d150b8e651a3c83365fd8ae320eeb083775d7caaa2556354",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/ro-MD/sports/": {
-      "hash": "de9afaa7abaa30edffe596534a5cb4cd70e535c885ebc2e1068a818af7cec386",
+      "hash": "e88a0e75f5cb1d1127d380bf150bb4832607ac37ecfc892f52db5ef4e5e2dffc",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/ro-MD/casino/": {
-      "hash": "663e05094049de434f3bd295e458bf69e91aa882793dc162d423f2dfeb9d7042",
+      "hash": "b96fc24f88329d7378dc897ce1b73be6c6f0b894ab8bbbcc13ab3d3e0508445c",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/ro-MD/app/": {
-      "hash": "74acc101e0ea7f89268fced65b39667d4104bce38bb16479fa52335fe277123e",
+      "hash": "f725661476c6d3f684d8f40f0748eb684b04c13743bf895ba6e7b7ac06f9c817",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/ro-MD/login/": {
-      "hash": "ce85c65944df61cca6315ffa535e6811bbc120ca07ee59e73ccc4c3bddc5151d",
+      "hash": "ba8a56a903fee040afc67caa20cd0bcece55fbc5663d563a78ee6bbda4019f31",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/ro-MD/bonus/": {
-      "hash": "f82b27f4d5607e9e2ce52c59957600ce7d5fc217ca17470b44a5c55e5533b11c",
+      "hash": "1525280c1367639a8f420198219bc34cd332fb07eceeee150e56af5c0f5e4880",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/ro-MD/payments/": {
-      "hash": "ceae8bae49b6f63c0202d2a1d424b424f4e4da7e96a7fcc19aa761281ee8a7b0",
+      "hash": "0e1e03091749ba88a8bb5fdbbf0ea59c13cd10935d3fc978668eaa4312262047",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/ro-MD/chile/": {
-      "hash": "be55eb64d05159dadcdc153ce73b1cfb1d5e0cf87137d948c8ac554352a0a6e6",
-      "lastmod": "2026-10-27"
+      "hash": "c5d5646c8c62b065b7cf0f4833a1f1753506160c1a6de86896cd8d414bafff9f",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/ro-MD/argentina/": {
-      "hash": "6badec92d2a984012b4ce7b78feeb16d1663352ec3ed10d3393d9451286b3ec8",
-      "lastmod": "2026-10-27"
+      "hash": "4db2af90ba71dcdb7b298e354c1f85c165342f805f05ddf64c52c0a2d4105457",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/hi/": {
-      "hash": "b1613cc1816f83e2e4014265abd6f7f722aa926dfc26571c7d9e76795e02abb9",
+      "hash": "196ce7fce4b395413ac30a0e398375980d04f1652006955fbe3b6750302ee349",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/hi/company/": {
-      "hash": "b43ee4b9a6a9b4e3bf307e61ad46fd905236b0e5fccf96e4087a4d4b46810644",
+      "hash": "62e6b43336794e7fbd54ce256cd64257a501919e3adc0a571c3eae5fc2a2ac5d",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/hi/sports/": {
-      "hash": "91cd271d14487cdf16461a47d80ce52f043b756e3dbe6ef732e73007f660e975",
+      "hash": "f4ff98e2296ddd7a20bad7cf4f8ba2e610754baa8e35f6953766bda6fb4a7b24",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/hi/casino/": {
-      "hash": "3d1d13c097a7992f4d9ffa393e2f8efb215e167d92bb3221c104fffad8c198c6",
+      "hash": "db51d80ba7966b15cd03064b6c1eaffb789200d9bf8f39a216b5ea10655f0950",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/hi/app/": {
-      "hash": "d70e6bd2ce191dad534be9bde6ae193cc7ea657796f0e5c7a930424869e8b86f",
+      "hash": "f12d6dd3645bd555afda244572b5c61736870e7cf566beb51a4cf3dff2159a94",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/hi/login/": {
-      "hash": "e066d1c6d1131d3e03b950cf67db75d5354be501f16d171aa83c964217d6a3ec",
+      "hash": "4802b88b978e8fa8d5579e0e5cc2c2dbe9d6a79dcc81d7d52dfd34ada1c220c2",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/hi/bonus/": {
-      "hash": "f02a8500e180b3f5dde0a15e72fb26c92979bf2d8e61ecb237ca3477c0dcebb9",
+      "hash": "2007957b3eb4554f7da0c5803ea4fc07166243b85f9cd941ef4c4695582398a9",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/hi/payments/": {
-      "hash": "4713dbc65b38b82e0b45b30388695b2c7595ba71554f449085ac90850b12cb41",
+      "hash": "1e08f2851d49f71f45b66760c33c92cfbbf1ecf162bb71df97a6fb2aa2e0237c",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/hi/chile/": {
-      "hash": "b3952e8714b7cac946543591cff53203674bbd949d9ebd401775e0eeb01b2303",
-      "lastmod": "2026-10-27"
+      "hash": "cbf6767999546044d1d3462b8cd29539d905d570b61ac5eaf4a87875ada77c62",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/hi/argentina/": {
-      "hash": "b9de2d59f81dc11778de3d5d70a212445868e937cecd7a954597bf5dfa019de2",
-      "lastmod": "2026-10-27"
+      "hash": "d4c887975f6361b7b338a72257d6448b011fb6f58741ef0c9c293148021b52ba",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/uz/": {
-      "hash": "b1494d6d4f4ce08a14fb6ce071f2350d338074671a9545c25efaa9b335ad939e",
+      "hash": "2bb2854f37dcf0e72de0383514261d75f8d946e5406fbe7b4e83c241db981fd1",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/uz/company/": {
-      "hash": "64b2f6ebbe0e1e2fbe6f6acaf8c941c5825d481bfe5277780140b4229ecceaf4",
+      "hash": "8f7c25e3630cecfcc2f52082caa904eafd7d010d23c4b54adec6dd1d77938f8e",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/uz/sports/": {
-      "hash": "9229123a1685691df345aacd05f8d8d8c8ee115697d41cb66e7639b5f30811ca",
+      "hash": "974ac60ffe17cc356e00cf26f9e7146d22b77c9f490183e9080175b26d0fd03d",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/uz/casino/": {
-      "hash": "f0867e93504e1a07449ec17121a1188c74eec9b7a2d598f2b8d3752a94f05e7e",
+      "hash": "91eb669e5e070a95203448a3d4b14291a1570223a64e2349c8568ef3ed749320",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/uz/app/": {
-      "hash": "5b232d9f2e51bd2f56ccee3728abf9ea822c5b9c33a8fddad1aa618c8492925f",
+      "hash": "37ec2a37b4f111d5c5c263120c09ae2096e3c9af40ac87971b6258f0019c6479",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/uz/login/": {
-      "hash": "0cf392d567db83257826a04b92d27d06af7fe6dbf7d9e95b03206f559bc60ddd",
+      "hash": "da228da45461c7587b240ecd41c5bfd1eeae6268abae89cf8931354370f7599a",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/uz/bonus/": {
-      "hash": "a73ffeea91157af850ccb15ce175ac9e225b25233a20508e07d6cf897916d460",
+      "hash": "6972da65d3b7691e1d7d6f94c24a2787de81302a8ae85c7b618ccdcb2a6ac6d3",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/uz/payments/": {
-      "hash": "28996fe490fb8239261984f1125da643d14e573243d19a124ebc62199a7ec8d3",
+      "hash": "99e3714d5631d9071497596b63b2e99da944a30df72122d5b0a980a2fc9b3c9b",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/uz/chile/": {
-      "hash": "4f7d0f1ff88c3410ef19afabee8ddb63448a11b1ae32740298f14d14fc61aa7f",
-      "lastmod": "2026-10-27"
+      "hash": "d626b4ce6cbc636130a08164dec8fad83b3fc2240ad8ba5cb12b8235afe25ddd",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/uz/argentina/": {
-      "hash": "d443e6c3b504a58869907fe6b240c2e33a669328db788268f9ee32fcae68db9b",
-      "lastmod": "2026-10-27"
+      "hash": "8fc86f5ebb121a69799af4e076b899a3f47f3db1e0629b120923e1dccf35272c",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/kk/": {
-      "hash": "f30fec2108fb7fba6cb67e11c008e68df781ee51b8d7b95dd1e8aa0e5ce63844",
+      "hash": "ba4b3ec5871ceff2f2fc5510eb03749a75539060b8415008541d837637b2451e",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/kk/company/": {
-      "hash": "b0fe5db518f1c997488d2c560f5d385b615085e9c3a7ffcd0dbaa7831e3773fa",
+      "hash": "bd05dffa4398fe54ca5b6e32ffb35d41f494f0932f1dcc955694966fedad244f",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/kk/sports/": {
-      "hash": "3b43f1975680dfc0769cd97691c194dab4365c1b92ebd9ccd266d5bcd79f891c",
+      "hash": "50645a42302957ec4e9035dc921957e91c637eacc8b7eb17862b4d79e2ca0690",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/kk/casino/": {
-      "hash": "f2332db7eeb99b67e44b8dcfba961bc985e825d3b6465330b976f1dc7645715a",
+      "hash": "65fbe91aefb80996b489110bd0c021669aa8a1bd0a055a570b2bc9969aa632ed",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/kk/app/": {
-      "hash": "884eaa8e88c032470d293a83f2f2face6c61df67277e0c974b1de5d1815374a5",
+      "hash": "9fd70d14843e1dce3007b507f032c7a78b1040906fb93f396eb31a06dec81074",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/kk/login/": {
-      "hash": "a25a3a7abdee92af2f9e5f94e1e1e5c84aed23cfbf1393cc6a262e38956d6ec7",
+      "hash": "6bc6e22abbf6525631d80092d49e0e1e3485ec5b4998357bc4d78e7c11f82b20",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/kk/bonus/": {
-      "hash": "104c6e972c422443a436c2fd641892284efa1b5cc62f99dd3be5599bb70679af",
+      "hash": "4e4bec18d4a0ae47b166e39f92718cf74d52bacd744d7d43de167fce7a26adaa",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/kk/payments/": {
-      "hash": "55d8d33c6a1180040e4eb98e9616aeea5da9ea8e52bfb513feaf6d5398e9e03d",
+      "hash": "810c4acd8b0fac10df35159cdc56f542554d58b4b31681b7909d5898b5ae7e2d",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/kk/chile/": {
-      "hash": "51332cca484b2cd012749f9c38978342343a5760db8f0e1d166e67948031196d",
-      "lastmod": "2026-10-27"
+      "hash": "c015ea052963b7f9c0b1d51fd9030426eec57fcd7b86697b12e41ae8be3bea0e",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/kk/argentina/": {
-      "hash": "1567fecbb8d771101604c3764c175f67f75a5e6c9262417f4622710ce9f908af",
-      "lastmod": "2026-10-27"
+      "hash": "a343a76e89567939079d34b39da8bd3760db0f34dcb8584d883863deffcb0324",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/tg/": {
-      "hash": "b8aa3ebedef098f89ee6d862f7294906fd35963b8f140a20ddce80a8ec02cae2",
+      "hash": "f15a9939a6b9062cba1432f36cfbe2b447839bac6c9ca094eebe02ba6705b6b0",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/tg/company/": {
-      "hash": "937af579c8ff3f66bff575a1f4598a994abdd5449c1118a0a03c555e7e0d8d33",
+      "hash": "de2ea16cc1beb48f993d658c3547f63b41366ef6c46445122acaefbbfb30ee9e",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/tg/sports/": {
-      "hash": "2ace138f0b8c89ae518a0f161a8d95872be1665a078bafbd634d7f9aff93564a",
+      "hash": "dc0a8436e38aadea7aca20ff895958cc97ade0435ddf56fd572f87e7ea018924",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/tg/casino/": {
-      "hash": "df419a01fe95ceee8a2e3cec79a7fb28f900ffeea076d53fa2287c7333b7a5c4",
+      "hash": "cbb9e31d55a6743a7c390823d84c4d71b98e5e960bb01083ac6a32c0c0ace301",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/tg/app/": {
-      "hash": "2bfb5e4f33c2173f5085925bd80b0538e2ea891c861149e692d937f424642b2c",
+      "hash": "165c5dc1cd242f572e17168ea898bfb2b3a301ea1b25757322f8290cbfb461f1",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/tg/login/": {
-      "hash": "9d5e597c9df4bec2bb596b24a0de73657e058e516d56805d8b32738fe85adb65",
+      "hash": "fb128e98a97e36a696cda605600ad1bee5a1b3df25d6dfbe754ed13ced28f75b",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/tg/bonus/": {
-      "hash": "9e8e91517d7162531304c85902c2cf3e78430a0f6433a290f592002c702aee6a",
+      "hash": "b556a86cec676dfb5712dff92ad61460d9ab9fa697cb3d1aa8716451664ff1d8",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/tg/payments/": {
-      "hash": "419d34fd9bdc455a44829910142e7454f99069bdb673333ed2d2952f374fbcbf",
+      "hash": "b76d63bb47161286ec93d5166412f80275309a3599ad7dbf87ad33103842a626",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/tg/chile/": {
-      "hash": "11ace8e29126acfa430f3968b078375206e19e79f3c1709d4a586a0822a5280d",
-      "lastmod": "2026-10-27"
+      "hash": "acbe3debf21bf87d6e26db36305034a7fe6a3af3b32baf6a525e521112230755",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/tg/argentina/": {
-      "hash": "e89ede4a8bd0038bd421e30cd305cc6e8b9c47ddffe92abe42d4aedaaf479634",
-      "lastmod": "2026-10-27"
+      "hash": "bf5107b9f37b682974e654a287c20c27088e434f0b9292279c8f06c1d6199ffa",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/az/": {
-      "hash": "bf9fb308d19f7fdc7acab0617bf3c8b3242aae436baae0ddd9704bcd9a2ac413",
+      "hash": "225354c86afac6f8384bd8d3e6f03370beefcd44ee6458bb3ee7a627fb748429",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/az/company/": {
-      "hash": "9b07af8b622fb8c2c48d435ad0669273a1aff4964a05632070a5297b1ad81690",
+      "hash": "82c1cd4128eceb1a3493edecda2d51c1d8d1a1afb3c16dfd6b8730119a7641e9",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/az/sports/": {
-      "hash": "09059675ba24020439f5bf0bac417150e0774dc5937dcdadc0b099f55e24a076",
+      "hash": "540e26d3f797c25bb60d3dd89058057c05567b2f179ab7f5212365d9951dd8b9",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/az/casino/": {
-      "hash": "f55a7d428249364df66e1039c0eb638d78ec82765ce50092e73be1278d1ab64e",
+      "hash": "5436b736e9056635605ecaebd857590873f10f9d91574d8debb7816fcb3acf14",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/az/app/": {
-      "hash": "7643f614f612c466e7f1cec3a3fac01a38e7387cf812d243ff51dca4a837ff7d",
+      "hash": "a9e0a4c3337a1974d765046d4d35803ea7eba3e5fe635d98929e000047e6237d",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/az/login/": {
-      "hash": "d0e3e049711c22f4ad6eef421e1ed066a83f2d89a5fe7cb0481b65db51468402",
+      "hash": "abcf80cb078e8fb2f3d9acc6b34199299bc9b87a1e00688f6b5020039c0ba626",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/az/bonus/": {
-      "hash": "34a27cc385831316368d7c3510a4585ee068f2efec250a7fad7a8cc678924918",
+      "hash": "0f1c177e92e48b4e1b710564077d1107265f9b95586e97f7e3fdce526f08b672",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/az/payments/": {
-      "hash": "a2eb7c8a8ded4f27601eb307a94a1c2fbfb1ff49fb6b262e9825adcb70a6cf74",
+      "hash": "92ccf7be3facbad2fd455db2853835f4b891f5048ab4a18687213d98b9f4ce0b",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/az/chile/": {
-      "hash": "b6ac88d5946c70d176d2085decfc68c72c2bcaff33dd48ed08e5af244a05ebd4",
-      "lastmod": "2026-10-27"
+      "hash": "c7a6c83346f21c0a388e5b4597b3677aa53997b3d43c3069ca21ddca20f4cf2d",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/az/argentina/": {
-      "hash": "e47cb8b1c30efda67dd22450e5d35a58e4066947f12fc394c4e66a8fb7b828fb",
-      "lastmod": "2026-10-27"
+      "hash": "becd2eb0c1cb945cc1981965a8ea69e2a7eac2a1a2f4408bc9af57007cf97f8e",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/hy/": {
-      "hash": "4324ae539bc53cb99b1aa04256e663d18c800f1b58b4342d85722196d3b0910e",
+      "hash": "8ac7bc0aaea18b3c75826a0784c2e572dff6a8cb37fa092b5c980db412d49e3b",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/hy/company/": {
-      "hash": "a6d0802bbb51b2f10eb1389e76fa4904ef6f85aee72c5f7fde8826b44bd6568c",
+      "hash": "bb3744b3ac89d8f42b16542bf26914072dc8ea4ca3a7e9048af018a3f913070c",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/hy/sports/": {
-      "hash": "2f619d85aa3961294dca23f5d76dfb25d6777f5f0d648b55f79a6358b7f59c77",
+      "hash": "e50f7178c3e40a02ef66aadee3674d4f15fc346ebc435d66cc6e8f28ee5634b7",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/hy/casino/": {
-      "hash": "23b1f1ac013e287b7f3dcd934993b9f10d14b7d38925b9ea6ec1afbe1a462bde",
+      "hash": "78de6be0b4436c34842d3671764d0dfc7d0aa36d712a37904321bebe2cb4b43d",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/hy/app/": {
-      "hash": "bb080ae15623487c2b2cf53b3006dfe0e2e3b8e74e09513c2db3c8469175c181",
+      "hash": "1378e3027fd0caf504f1bea78d391d3f5111ef9ec9d85405adb11952fa85839d",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/hy/login/": {
-      "hash": "861014f4d7c19fa35a1df76166bfcf97852a1af738c87f53e6c01f646a76dade",
+      "hash": "4dbf63a343686bc20fad2c383f35aae21fb547ff59047aea882ea3b63397f357",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/hy/bonus/": {
-      "hash": "677335f5534d00663ddb52479be6aae2843e8b9bb306512416bce1eedd5173bc",
+      "hash": "6ac5d52eba6856beef30348e411805b262e9886b0b69711fc1fe9cf5f73a255d",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/hy/payments/": {
-      "hash": "d6017a1303a351aa38437260ff664cd985337de89ad5b820c84cf0707154d4c0",
+      "hash": "2752dff2dc4086e2f2a1529a19c5ffadb3ccc2d06e6cecbe35b0a6514182d34b",
       "lastmod": "2026-10-27"
     },
     "https://betano.media/hy/chile/": {
-      "hash": "e62fa1911da710bdb65ba278793871352bdfc8363c2218bcfa7361da1f0e2a6d",
-      "lastmod": "2026-10-27"
+      "hash": "6a6cda33352cac85851ee424640fe6da5d6b6f73ef581ea7c6418660cd34c45d",
+      "lastmod": "2026-10-28"
     },
     "https://betano.media/hy/argentina/": {
-      "hash": "15bb1e3b72071a34ed57ef5068a6a5f6edeb1f149ef0a8883ac6dad3bf043592",
-      "lastmod": "2026-10-27"
+      "hash": "28924b48639851a04e43fe36c8791815a2caf90f79131c28c47d056af9a2262c",
+      "lastmod": "2026-10-28"
     }
   }
 }

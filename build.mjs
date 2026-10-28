@@ -128,7 +128,7 @@ const ogLocale=lang=>localeCode(lang).replace("-","_");
 const linkMap=(key)=>({company:["sports","casino","app","login"],sports:["login","bonus","payments","app"],casino:["bonus","payments","app","login"],app:["login","payments","sports","casino"],login:["app","company","payments","bonus"],bonus:["payments","sports","casino","login"],payments:["login","app","chile","argentina"],chile:["company","payments","app","login"],argentina:["company","payments","app","login"]}[key]||pages.slice(0,4));
 
 function hreflangs(key=""){const regional=key==="chile"||key==="argentina";return Object.keys(L).filter(l=>!regional||!(["de","pt"].includes(l))).map(l=>'<link rel="alternate" hreflang="'+localeCode(l)+'" href="'+url(l,key)+'">').join("")+'<link rel="alternate" hreflang="x-default" href="'+url("en",key)+'">';}
-function languageMenu(lang,key=""){return '<details class="lang"><summary aria-label="Language">'+esc(lang.toUpperCase())+' ▾</summary><div class="lang-panel">'+Object.entries(L).map(([code,t])=>'<a href="'+href(code,key)+'" '+(code===lang?'aria-current="page"':'')+'>'+esc(t.name)+'</a>').join("")+'</div></details>';}
+function languageMenu(lang,key=""){const regional=key==="chile"||key==="argentina";return '<details class="lang"><summary aria-label="Language">'+esc(lang.toUpperCase())+' ▾</summary><div class="lang-panel">'+Object.entries(L).filter(([code])=>!regional||!(["de","pt"].includes(code))).map(([code,t])=>'<a href="'+href(code,key)+'" '+(code===lang?'aria-current="page"':'')+'>'+esc(t.name)+'</a>').join("")+'</div></details>';}
 function header(lang,key=""){const t=L[lang];return '<div class="topline"><div class="wrap"><span>'+esc(t.about)+'</span><span>betano.media</span></div></div><header class="site-head"><div class="wrap head-row"><a class="brand" href="'+href(lang)+'" aria-label="Betano"><img src="/assets/betano-logo.webp" width="410" height="91" alt="Betano"></a><button class="menu-btn" aria-expanded="false" aria-label="'+esc(t.menu)+'">'+esc(t.menu)+'</button><nav class="nav">'+navKeys.map(k=>'<a href="'+href(lang,k)+'">'+esc(t[k])+'</a>').join("")+'</nav><div class="actions">'+languageMenu(lang,key)+'<a class="btn orange" href="'+affiliate+'" rel="nofollow sponsored noopener">'+esc(t.register)+'</a></div></div></header>';}
 function mobileOfferBar(lang){const labels=mobileCtas[lang]||[L[lang].login,L[lang].register];return '<nav class="mobile-offer-bar" aria-label="Betano" aria-hidden="true"><a class="mobile-login" href="'+affiliate+'" rel="nofollow sponsored noopener" tabindex="-1">'+esc(labels[0])+'</a><a class="mobile-register" href="'+affiliate+'" rel="nofollow sponsored noopener" tabindex="-1">'+esc(labels[1])+'</a></nav>';}
 function footer(lang){const t=L[lang];const local=lang==="de"?'<strong>Deutschland</strong><a href="'+href(lang,"company")+'">Unternehmen & Lizenz</a><a href="'+href(lang,"sports")+'">Bundesliga & Livewetten</a><a href="'+href(lang,"payments")+'">Auszahlung & Zahlungsarten</a>':lang==="pt"?'<strong>Brasil</strong><a href="'+href(lang,"company")+'">Empresa & plataforma</a><a href="'+href(lang,"sports")+'">Brasileirão & ao vivo</a><a href="'+href(lang,"payments")+'">PIX, depósito & saque</a>':'<strong>'+esc(t.regions)+'</strong><a href="'+href(lang,"chile")+'">Betano Chile</a><a href="'+href(lang,"argentina")+'">Betano Argentina</a><a href="'+href(lang,"company")+'">'+esc(t.company)+'</a>';return '<footer class="footer"><div class="wrap"><div class="footer-grid"><div><img src="/assets/betano-logo.webp" alt="Betano"><p>'+esc(t.lead)+'</p></div><div class="foot-links"><div><strong>'+esc(t.focus)+'</strong><a href="'+href(lang,"sports")+'">'+esc(t.sports)+'</a><a href="'+href(lang,"casino")+'">'+esc(t.casino)+'</a><a href="'+href(lang,"bonus")+'">'+esc(t.bonus)+'</a></div><div><strong>'+esc(t.official)+'</strong><a href="'+href(lang,"login")+'">'+esc(t.login)+'</a><a href="'+href(lang,"app")+'">'+esc(t.app)+'</a><a href="'+href(lang,"payments")+'">'+esc(t.payments)+'</a></div><div>'+local+'</div></div></div><div class="copyright">© 2026 betano.media</div></div></footer>';}
@@ -179,17 +179,50 @@ const statePath=path.join(root,"seo-page-state.json");
 let previous={pages:{}};
 try{previous=JSON.parse(fs.readFileSync(statePath,"utf8"));}catch{}
 const today=new Date().toISOString().slice(0,10);
-const next={version:1,pages:{}};
+const next={version:2,pages:{}};
 for(const u of urls){
  const rel=new URL(u).pathname.replace(/^\//,"");
  const htmlPath=path.join(out,rel,"index.html");
- const hash=crypto.createHash("sha256").update(fs.readFileSync(htmlPath)).digest("hex");
+ const html=fs.readFileSync(htmlPath,"utf8");
+ const normalized=html.replace(/([?&]v=)[^"'&<>]+/g,"$1ASSET_VERSION");
+ const hash=crypto.createHash("sha256").update(normalized).digest("hex");
+ const legacyHash=crypto.createHash("sha256").update(html).digest("hex");
  const old=previous.pages?.[u];
- next.pages[u]={hash,lastmod:old?.hash===hash&&old?.lastmod?old.lastmod:today};
+ next.pages[u]={hash,lastmod:(old?.hash===hash||old?.hash===legacyHash)&&old?.lastmod?old.lastmod:today};
 }
 fs.writeFileSync(statePath,JSON.stringify(next,null,2)+"\n");
 fs.writeFileSync(path.join(out,"sitemap.xml"),'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+urls.map(u=>'<url><loc>'+u+'</loc><lastmod>'+next.pages[u].lastmod+'</lastmod></url>').join("")+'</urlset>');
 fs.writeFileSync(path.join(out,"robots.txt"),'User-agent: *\nAllow: /\nSitemap: '+domain+'/sitemap.xml\n');
+const llms=[
+ "# betano.media",
+ "",
+ "> Independent multilingual guide to Betano, Kaizen Gaming, sports betting, casino products, account access, mobile apps, payments and regional availability.",
+ "",
+ "betano.media is an informational publication and is not the betting operator. Product availability, licensing, promotions and payment methods depend on the visitor's country and the official regional operator.",
+ "",
+ "## Main sections",
+ "",
+ `- [Company and ownership](${domain}/en/company/): Betano and Kaizen Gaming background.`,
+ `- [Sportsbook](${domain}/en/sports/): pre-match and live betting overview.`,
+ `- [Casino](${domain}/en/casino/): casino catalogue and product availability.`,
+ `- [Mobile app](${domain}/en/app/): official mobile access and installation guidance.`,
+ `- [Login](${domain}/en/login/): regional access and account troubleshooting.`,
+ `- [Offers](${domain}/en/bonus/): regional promotion terms and eligibility.`,
+ `- [Payments](${domain}/en/payments/): deposits, withdrawals and verification.`,
+ `- [Betano Chile](${domain}/en/chile/): Chile-specific access.`,
+ `- [Betano Argentina](${domain}/en/argentina/): province-specific access in Argentina.`,
+ "",
+ "## Localized editions",
+ "",
+ ...Object.keys(L).map(lang=>"- ["+L[lang].name+"]("+url(lang)+")"),
+ "",
+ "## Discovery",
+ "",
+ `- [XML sitemap](${domain}/sitemap.xml): complete list of canonical indexable URLs with content-based last-modified dates.`,
+ `- [Robots policy](${domain}/robots.txt): crawler access policy.`,
+ ""
+].join("\n");
+fs.writeFileSync(path.join(out,"llms.txt"),llms);
 fs.writeFileSync(path.join(out,"indexnow-key.txt"),indexNowKey);
 fs.writeFileSync(path.join(out,indexNowKey+".txt"),indexNowKey);
 fs.writeFileSync(path.join(out,"BingSiteAuth.xml"),'<?xml version="1.0"?><users><user>0DE36A8DCEE7B75181435A6ED39F3AAC</user></users>');
