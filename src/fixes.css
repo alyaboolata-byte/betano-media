@@ -25,3 +25,21 @@
  .market-global .promo-card{flex-basis:86%}
  .market-global .shot-link{flex-basis:86%;max-width:440px}
 }
+
+
+/* Cross-locale responsive hardening: preserve complete product imagery and long translations. */
+html{overflow-x:clip}
+body{min-width:0;overflow-wrap:anywhere}
+img,video,svg{max-width:100%}
+picture,img{height:auto}
+main,section,article,aside,.container,.market-global,.market-hero-inner{min-width:0}
+table{width:100%;max-width:100%;border-collapse:collapse}
+@media(max-width:900px){
+ main,section,article,.container{max-width:100%}
+ .market-global .shot-link img,.market-global .promo-card img{max-width:100%;object-fit:contain}
+ .mobile-offer-bar a{overflow-wrap:anywhere;hyphens:auto}
+}
+@media(max-width:480px){
+ .market-global .market-hero h1{font-size:clamp(30px,9vw,42px);overflow-wrap:break-word}
+ .market-global .promo-card,.market-global .shot-link{min-width:0;max-width:100%}
+}
