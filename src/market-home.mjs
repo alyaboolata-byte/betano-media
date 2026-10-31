@@ -1,4 +1,4 @@
-const A="https://r1wbjhb.com/?p=9n57";
+const A="https://go.apswatchbracelet.com/betano-media";
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
 
 const markets={

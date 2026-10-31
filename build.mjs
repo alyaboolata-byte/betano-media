@@ -20,7 +20,7 @@ fs.cpSync(path.join(root,"assets","screenshots"),path.join(out,"assets","screens
 fs.cpSync(path.join(root,"assets","screenshots-br"),path.join(out,"assets","screenshots-br"),{recursive:true});
 if(fs.existsSync(path.join(root,"assets","og")))fs.cpSync(path.join(root,"assets","og"),path.join(out,"assets","og"),{recursive:true});
 
-const affiliate="https://r1wbjhb.com/?p=9n57";
+const affiliate="https://go.apswatchbracelet.com/betano-media";
 const domain="https://betano.media";
 const assetVersion="20261027-3";
 const indexNowKey="4e7db1d1c6f24e98a73c42c699f5eb41";
