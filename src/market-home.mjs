@@ -1,4 +1,4 @@
-const A="https://go.apswatchbracelet.com/betano-media";
+const A="https://get-fastpromo.com/l/6ae0de7bddd4c69b1605a582?sub_id={sub_id_1}&click_id={click_id}";
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
 
 const markets={
