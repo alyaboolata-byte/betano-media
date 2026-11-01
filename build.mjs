@@ -191,7 +191,12 @@ for(const u of urls){
  next.pages[u]={hash,lastmod:(old?.hash===hash||old?.hash===legacyHash)&&old?.lastmod?old.lastmod:today};
 }
 fs.writeFileSync(statePath,JSON.stringify(next,null,2)+"\n");
-fs.writeFileSync(path.join(out,"sitemap.xml"),'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+urls.map(u=>'<url><loc>'+u+'</loc><lastmod>'+next.pages[u].lastmod+'</lastmod></url>').join("")+'</urlset>');
+const prioritySitemapLocales=new Set(["de","pt"]);
+const sitemapUrls=Object.keys(L).flatMap(lang=>{
+ const keys=prioritySitemapLocales.has(lang)?pages.filter(key=>!["chile","argentina"].includes(key)):[];
+ return [url(lang),...keys.map(key=>url(lang,key))];
+});
+fs.writeFileSync(path.join(out,"sitemap.xml"),'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+sitemapUrls.map(u=>'<url><loc>'+u+'</loc><lastmod>'+next.pages[u].lastmod+'</lastmod></url>').join("")+'</urlset>');
 fs.writeFileSync(path.join(out,"robots.txt"),'User-agent: *\nAllow: /\nSitemap: '+domain+'/sitemap.xml\n');
 const llms=[
  "# betano.media",
