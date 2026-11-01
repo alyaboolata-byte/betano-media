@@ -21,8 +21,8 @@ fs.cpSync(path.join(root,"assets","screenshots"),path.join(out,"assets","screens
 fs.cpSync(path.join(root,"assets","screenshots-br"),path.join(out,"assets","screenshots-br"),{recursive:true});
 if(fs.existsSync(path.join(root,"assets","og")))fs.cpSync(path.join(root,"assets","og"),path.join(out,"assets","og"),{recursive:true});
 
-const affiliate="https://get-fastpromo.com/l/6ae0de7bddd4c69b1605a582?sub_id={sub_id_1}&click_id={click_id}";
-const targetAffiliate="https://get-fastpromo.com/l/6ae0bbe14e6eb0f42f0e9792?sub_id={sub_id_1}&click_id={click_id}";
+const affiliate="https://go.apswatchbracelet.com/betano-media";
+const targetAffiliate="https://go.apswatchbracelet.com/betano-media";
 const affiliateFor=lang=>["de","pl","it"].includes(lang)?targetAffiliate:affiliate;
 const routeAffiliate=(html,lang)=>html.replaceAll(affiliate,affiliateFor(lang));
 const domain="https://betano.media";
