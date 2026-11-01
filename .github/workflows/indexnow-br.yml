@@ -1,0 +1,49 @@
+name: Submit Brazilian URLs to IndexNow
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for production pages
+        run: |
+          for attempt in {1..30}; do
+            if curl -fsS https://betano.media/sitemap-br-hot.xml | grep -q '/pt-br/noticias-betano/'; then
+              exit 0
+            fi
+            sleep 10
+          done
+          exit 1
+      - name: Submit Brazilian URLs
+        shell: python
+        run: |
+          import json, re, urllib.request
+          urls = []
+          for sitemap_url in [
+              "https://betano.media/sitemap.xml",
+              "https://betano.media/sitemap-br-hot.xml",
+          ]:
+              xml = urllib.request.urlopen(sitemap_url, timeout=30).read().decode()
+              urls.extend(re.findall(r"<loc>(.*?)</loc>", xml))
+          urls = sorted({u for u in urls if "/pt/" in u or "/pt-br/" in u})
+          payload = {
+              "host": "betano.media",
+              "key": "4e7db1d1c6f24e98a73c42c699f5eb41",
+              "keyLocation": "https://betano.media/4e7db1d1c6f24e98a73c42c699f5eb41.txt",
+              "urlList": urls,
+          }
+          request = urllib.request.Request(
+              "https://api.indexnow.org/indexnow",
+              data=json.dumps(payload).encode(),
+              headers={"Content-Type": "application/json; charset=utf-8"},
+              method="POST",
+          )
+          with urllib.request.urlopen(request, timeout=30) as response:
+              print("IndexNow status:", response.status, "URLs:", len(urls))
