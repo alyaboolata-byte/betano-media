@@ -21,7 +21,10 @@ fs.cpSync(path.join(root,"assets","screenshots"),path.join(out,"assets","screens
 fs.cpSync(path.join(root,"assets","screenshots-br"),path.join(out,"assets","screenshots-br"),{recursive:true});
 if(fs.existsSync(path.join(root,"assets","og")))fs.cpSync(path.join(root,"assets","og"),path.join(out,"assets","og"),{recursive:true});
 
-const affiliate="https://go.apswatchbracelet.com/betano-media";
+const affiliate="https://get-fastpromo.com/l/6ae0de7bddd4c69b1605a582?sub_id={sub_id_1}&click_id={click_id}";
+const targetAffiliate="https://get-fastpromo.com/l/6ae0bbe14e6eb0f42f0e9792?sub_id={sub_id_1}&click_id={click_id}";
+const affiliateFor=lang=>["de","pl","it"].includes(lang)?targetAffiliate:affiliate;
+const routeAffiliate=(html,lang)=>html.replaceAll(affiliate,affiliateFor(lang));
 const domain="https://betano.media";
 const assetVersion="20261101-1";
 const indexNowKey="4e7db1d1c6f24e98a73c42c699f5eb41";
@@ -169,8 +172,8 @@ function homeHtml(lang){
 
 for(const [lang,t] of Object.entries(L)){
  const dir=path.join(out,lang);fs.mkdirSync(dir,{recursive:true});
- fs.writeFileSync(path.join(dir,"index.html"),homeHtml(lang));
- for(const key of pages){const p=path.join(dir,key);fs.mkdirSync(p,{recursive:true});fs.writeFileSync(path.join(p,"index.html"),pageHtml(lang,key));}
+ fs.writeFileSync(path.join(dir,"index.html"),routeAffiliate(homeHtml(lang),lang));
+ for(const key of pages){const p=path.join(dir,key);fs.mkdirSync(p,{recursive:true});fs.writeFileSync(path.join(p,"index.html"),routeAffiliate(pageHtml(lang,key),lang));}
  const svg='<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"><defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#ff4200"/><stop offset=".7" stop-color="#ff6530"/><stop offset="1" stop-color="#17120f"/></linearGradient></defs><rect width="1200" height="630" rx="0" fill="url(#g)"/><path d="M0 480 C250 330 310 650 610 440 S950 250 1200 370" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="12"/><text x="78" y="116" font-family="Arial,sans-serif" font-size="42" font-weight="700" fill="white">BETANO</text><text x="78" y="270" font-family="Arial,sans-serif" font-size="64" font-weight="800" fill="white">'+esc(t.hero).replace(/&/g,"&amp;")+'</text><text x="78" y="350" font-family="Arial,sans-serif" font-size="29" fill="white" opacity=".9">'+esc(t.focus).replace(/&/g,"&amp;")+' · '+esc(t.regions).replace(/&/g,"&amp;")+'</text><text x="78" y="545" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="white">betano.media</text><text x="930" y="510" font-family="Arial,sans-serif" font-size="330" font-weight="900" font-style="italic" fill="white" opacity=".13">B</text></svg>';
  fs.writeFileSync(path.join(out,"assets","og",lang+".svg"),svg);
 }
@@ -179,7 +182,7 @@ const hotUrls=[];
 for(const page of brazilNewsPages){
  const dir=path.join(out,page.routePath.replace(/^\/+|\/+$/g,""));fs.mkdirSync(dir,{recursive:true});
  const canonical=domain+page.routePath;
- fs.writeFileSync(path.join(dir,"index.html"),shell("pt",page.slug,page.title,page.desc,renderBrazilNewsPage(page,affiliate),{canonical,hot:true}));
+ fs.writeFileSync(path.join(dir,"index.html"),routeAffiliate(shell("pt",page.slug,page.title,page.desc,renderBrazilNewsPage(page,affiliate),{canonical,hot:true}),"pt"));
  hotUrls.push(canonical);
 }
 
