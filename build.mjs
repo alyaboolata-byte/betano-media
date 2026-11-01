@@ -4,6 +4,7 @@ import crypto from "node:crypto";
 import {marketMeta,renderMarketHome} from "./src/market-home.mjs";
 import {marketPageMeta,renderMarketPage} from "./src/market-pages.mjs";
 import {localizedPages} from "./src/localized-pages.mjs";
+import {brazilNewsPages,renderBrazilNewsPage} from "./src/brazil-news-pages.mjs";
 
 const root=process.cwd();
 const out=path.join(root,"dist");
@@ -22,7 +23,7 @@ if(fs.existsSync(path.join(root,"assets","og")))fs.cpSync(path.join(root,"assets
 
 const affiliate="https://go.apswatchbracelet.com/betano-media";
 const domain="https://betano.media";
-const assetVersion="20261027-3";
+const assetVersion="20261101-1";
 const indexNowKey="4e7db1d1c6f24e98a73c42c699f5eb41";
 const googleVerification='<meta name="msvalidate.01" content="0DE36A8DCEE7B75181435A6ED39F3AAC"><meta name="google-site-verification" content="2YuDynybzfzs2Ez7LLfH38_fbhQMXISIvYx28pkqW9g">';
 
@@ -139,13 +140,13 @@ function faq(lang,key){const t=L[lang],p=getText(key,lang);const q=[
 ];return '<div class="faq">'+q.map(([a,b])=>'<details><summary>'+esc(a)+'</summary><p>'+esc(b)+'</p></details>').join("")+'</div>';}
 function cta(t){return '<div class="cta-band"><div><h2>'+esc(t.cta)+'</h2><p>'+esc(t.ctaText)+'</p></div><a class="btn" href="'+affiliate+'" rel="nofollow sponsored noopener">'+esc(t.register)+'</a></div>';}
 function related(lang,key){const t=L[lang];return '<div class="cards">'+linkMap(key).map(k=>'<a class="link-card" href="'+href(lang,k)+'"><div><h3>'+esc((k==="chile"?"Betano Chile":k==="argentina"?"Betano Argentina":t[k]))+'</h3><p>'+esc(getText(k,lang)[2])+'</p></div><b>→</b></a>').join("")+'</div>';}
-function schema(lang,key,title,desc){const graph=[{"@type":"WebPage","@id":url(lang,key)+"#page","url":url(lang,key),"name":title,"description":desc,"inLanguage":localeCode(lang),"isPartOf":{"@id":domain+"/#website"}},{"@type":"WebSite","@id":domain+"/#website","url":domain+"/","name":"betano.media"}];if(key)graph.push({"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Betano","item":url(lang)},{"@type":"ListItem","position":2,"name":title,"item":url(lang,key)}]});return JSON.stringify({"@context":"https://schema.org","@graph":graph});
+function schema(lang,key,title,desc,canonical=url(lang,key)){const graph=[{"@type":"WebPage","@id":canonical+"#page","url":canonical,"name":title,"description":desc,"inLanguage":localeCode(lang),"isPartOf":{"@id":domain+"/#website"}},{"@type":"WebSite","@id":domain+"/#website","url":domain+"/","name":"betano.media"}];if(key)graph.push({"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Betano","item":url(lang)},{"@type":"ListItem","position":2,"name":title,"item":canonical}]});return JSON.stringify({"@context":"https://schema.org","@graph":graph});
 }
-function shell(lang,key,title,desc,body){const t=L[lang],canonical=url(lang,key),market=marketMeta(lang),og=market?domain+'/assets/og/'+lang+'.jpg':domain+'/assets/og/'+lang+'.svg',ogType=market?'image/jpeg':'image/svg+xml',skip=lang==="de"?"Zum Inhalt":lang==="pt"?"Ir para o conteúdo":"Skip";return '<!doctype html><html lang="'+localeCode(lang)+'" dir="'+t.dir+'"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'+googleVerification+'<title>'+esc(title)+'</title><meta name="description" content="'+esc(desc)+'"><link rel="canonical" href="'+canonical+'">'+hreflangs(key)+'<link rel="icon" href="/assets/favicon.png"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:site_name" content="betano.media"><meta property="og:locale" content="'+ogLocale(lang)+'"><meta property="og:url" content="'+canonical+'"><meta property="og:title" content="'+esc(title)+'"><meta property="og:description" content="'+esc(desc)+'"><meta property="og:image" content="'+og+'"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:type" content="'+ogType+'"><meta property="og:image:alt" content="'+esc(t.hero)+'"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="'+esc(title)+'"><meta name="twitter:description" content="'+esc(desc)+'"><meta name="twitter:image" content="'+og+'"><link rel="stylesheet" href="/assets/styles.css?v='+assetVersion+'"><script type="application/ld+json">'+schema(lang,key,title,desc)+'</script></head><body><a class="skip" href="#content">'+esc(skip)+'</a>'+header(lang,key)+body+footer(lang)+mobileOfferBar(lang)+'<script src="/assets/app.js?v='+assetVersion+'" defer></script></body></html>';}
+function shell(lang,key,title,desc,body,custom={}){const t=L[lang],canonical=custom.canonical||url(lang,key),market=marketMeta(lang),og=market?domain+'/assets/og/'+lang+'.jpg':domain+'/assets/og/'+lang+'.svg',ogType=market?'image/jpeg':'image/svg+xml',skip=lang==="de"?"Zum Inhalt":lang==="pt"?"Ir para o conteúdo":"Skip",alternates=custom.hot?'<link rel="alternate" hreflang="pt-BR" href="'+canonical+'">':hreflangs(key),headerKey=custom.hot?"":key;return '<!doctype html><html lang="'+localeCode(lang)+'" dir="'+t.dir+'"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'+googleVerification+'<title>'+esc(title)+'</title><meta name="description" content="'+esc(desc)+'"><link rel="canonical" href="'+canonical+'">'+alternates+'<link rel="icon" href="/assets/favicon.png"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:site_name" content="betano.media"><meta property="og:locale" content="'+ogLocale(lang)+'"><meta property="og:url" content="'+canonical+'"><meta property="og:title" content="'+esc(title)+'"><meta property="og:description" content="'+esc(desc)+'"><meta property="og:image" content="'+og+'"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:type" content="'+ogType+'"><meta property="og:image:alt" content="'+esc(t.hero)+'"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="'+esc(title)+'"><meta name="twitter:description" content="'+esc(desc)+'"><meta name="twitter:image" content="'+og+'"><link rel="stylesheet" href="/assets/styles.css?v='+assetVersion+'"><script type="application/ld+json">'+schema(lang,key,title,desc,canonical)+'</script></head><body><a class="skip" href="#content">'+esc(skip)+'</a>'+header(lang,headerKey)+body+footer(lang)+mobileOfferBar(lang)+'<script src="/assets/app.js?v='+assetVersion+'" defer></script></body></html>';}
 function pageHtml(lang,key){const marketPage=marketPageMeta(lang,key);if(marketPage)return shell(lang,key,marketPage.title,marketPage.desc,renderMarketPage(lang,key));const t=L[lang],p=getText(key,lang);const title=p[0]+" | Betano · "+t.name,desc=p[1];const keyName=key==="chile"?"Betano Chile":key==="argentina"?"Betano Argentina":t[key];const body='<main id="content"><div class="wrap breadcrumb"><a href="'+href(lang)+'">Betano</a> / '+esc(keyName)+'</div><section class="page-hero"><div class="wrap"><span class="eyebrow">'+esc(t[key]||keyName)+'</span><h1>'+esc(p[0])+'</h1><p class="lead">'+esc(p[1])+'</p><div class="hero-actions"><a class="btn orange" href="'+affiliate+'" rel="nofollow sponsored noopener">'+esc(t.official)+'</a><a class="btn ghost" href="#details">'+esc(t.read)+'</a></div></div></section><section class="section white" id="details"><div class="wrap article-grid"><article class="prose"><h2>'+esc(t.why)+'</h2><p>'+esc(p[1])+'</p><p>'+esc(p[2])+'</p><h2>'+esc(t.facts)+'</h2><table class="facts"><tr><th>Betano</th><td>'+esc(t.focus)+'</td></tr><tr><th>'+esc(t.company)+'</th><td>Kaizen Gaming</td></tr><tr><th>'+esc(t.regions)+'</th><td>Betano Chile · Betano Argentina</td></tr><tr><th>'+esc(t.app)+'</th><td>Android · iOS · Mobile web</td></tr></table><h2>'+esc(t.steps)+'</h2><div class="steps"><div class="step"><div><strong>'+esc(t.official)+'</strong><p>'+esc(t.ctaText)+'</p></div></div><div class="step"><div><strong>'+esc(t[key]||keyName)+'</strong><p>'+esc(p[2])+'</p></div></div><div class="step"><div><strong>'+esc(t.facts)+'</strong><p>'+esc(p[1])+'</p></div></div></div><h2>'+esc(t.faq)+'</h2>'+faq(lang,key)+'</article><aside class="side"><div class="side-card"><h3>'+esc(t.cta)+'</h3><p>'+esc(t.ctaText)+'</p><a class="btn orange" href="'+affiliate+'" rel="nofollow sponsored noopener">'+esc(t.register)+'</a></div><div class="side-card"><h3>'+esc(t.related)+'</h3>'+linkMap(key).slice(0,4).map(k=>'<a href="'+href(lang,k)+'">'+esc((k==="chile"?"Betano Chile":k==="argentina"?"Betano Argentina":t[k]))+' →</a><br>').join("")+'</div></aside></div></section><section class="section"><div class="wrap"><div class="section-head"><h2>'+esc(t.related)+'</h2><p>'+esc(t.about)+'</p></div>'+related(lang,key)+cta(t)+'</div></section></main>';return shell(lang,key,title,desc,body);}
 function homeHtml(lang){
  const t=L[lang],market=marketMeta(lang);
- if(market)return shell(lang,"",market.title,market.desc,renderMarketHome(lang));
+ if(market){let body=renderMarketHome(lang);if(lang==="pt")body=body.replace("</main>",'<section class="news-home-entry"><div class="wrap"><span class="section-kicker">BETANO BRASIL AGORA</span><h2>Status, bloqueio, MP 1.394 e STF</h2><p>Abra o núcleo de notícias para conferir o que aconteceu, se a Betano voltou e qual acesso está disponível.</p><a class="btn orange" href="/pt-br/noticias-betano/">VER NOTÍCIAS E STATUS</a></div></section></main>');return shell(lang,"",market.title,market.desc,body);}
  const title=t.hero+" | betano.media",desc=t.lead;
  const features=["company","sports","casino"].map(k=>'<a class="feature" href="'+href(lang,k)+'"><div class="mark">B</div><h3>'+esc(t[k])+'</h3><p>'+esc(getText(k,lang)[1])+'</p></a>').join("");
  const promo=[
@@ -174,6 +175,14 @@ for(const [lang,t] of Object.entries(L)){
  fs.writeFileSync(path.join(out,"assets","og",lang+".svg"),svg);
 }
 
+const hotUrls=[];
+for(const page of brazilNewsPages){
+ const dir=path.join(out,page.routePath.replace(/^\/+|\/+$/g,""));fs.mkdirSync(dir,{recursive:true});
+ const canonical=domain+page.routePath;
+ fs.writeFileSync(path.join(dir,"index.html"),shell("pt",page.slug,page.title,page.desc,renderBrazilNewsPage(page,affiliate),{canonical,hot:true}));
+ hotUrls.push(canonical);
+}
+
 const urls=[];for(const lang of Object.keys(L)){urls.push(url(lang));for(const key of pages){if((["de","pt"].includes(lang))&&(["chile","argentina"].includes(key)))continue;urls.push(url(lang,key));}}
 const statePath=path.join(root,"seo-page-state.json");
 let previous={pages:{}};
@@ -197,7 +206,8 @@ const sitemapUrls=Object.keys(L).flatMap(lang=>{
  return [url(lang),...keys.map(key=>url(lang,key))];
 });
 fs.writeFileSync(path.join(out,"sitemap.xml"),'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+sitemapUrls.map(u=>'<url><loc>'+u+'</loc><lastmod>'+next.pages[u].lastmod+'</lastmod></url>').join("")+'</urlset>');
-fs.writeFileSync(path.join(out,"robots.txt"),'User-agent: *\nAllow: /\nSitemap: '+domain+'/sitemap.xml\n');
+fs.writeFileSync(path.join(out,"sitemap-br-hot.xml"),'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+hotUrls.map(u=>'<url><loc>'+u+'</loc><lastmod>'+today+'</lastmod></url>').join("")+'</urlset>');
+fs.writeFileSync(path.join(out,"robots.txt"),'User-agent: *\nAllow: /\nSitemap: '+domain+'/sitemap.xml\nSitemap: '+domain+'/sitemap-br-hot.xml\n');
 const llms=[
  "# betano.media",
  "",

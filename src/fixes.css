@@ -43,3 +43,19 @@ table{width:100%;max-width:100%;border-collapse:collapse}
  .market-global .market-hero h1{font-size:clamp(30px,9vw,42px);overflow-wrap:break-word}
  .market-global .promo-card,.market-global .shot-link{min-width:0;max-width:100%}
 }
+/* Brazilian breaking-news search cluster */
+.news-home-entry{padding:54px 0;background:linear-gradient(135deg,#1d1511,#3b1b0d);color:#fff}
+.news-home-entry .wrap{max-width:920px;text-align:center}
+.news-home-entry h2{margin:10px 0 12px;font-size:clamp(30px,5vw,52px)}
+.news-home-entry p{max-width:720px;margin:0 auto 22px;color:rgba(255,255,255,.78);font-size:18px}
+.news-hero .subpage-product img{aspect-ratio:16/9;object-fit:cover}
+.news-offer{display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px;margin:30px 0;padding:24px;border:1px solid rgba(255,86,20,.24);border-radius:22px;background:linear-gradient(135deg,#fff4ee,#fff)}
+.news-offer span{display:block;margin-bottom:6px;color:#d8430b;font-size:12px;font-weight:900;letter-spacing:.12em}
+.news-offer strong{display:block;font-size:22px;line-height:1.2}
+.news-offer p{margin:8px 0 0!important;color:#66534a}
+.news-page .market-page-section p{font-size:17px;line-height:1.75}
+@media(max-width:760px){
+ .news-offer{grid-template-columns:1fr}
+ .news-offer .btn{width:100%;text-align:center}
+ .news-home-entry{padding:38px 0}
+}

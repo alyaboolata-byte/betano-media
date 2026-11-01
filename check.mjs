@@ -14,7 +14,7 @@ for(const lang of ["de","pt"]){
  const words=s.replace(/<[^>]+>/g," ").trim().split(/\s+/).length;
  if(screenshots<6)bad.push(lang+": expected at least 6 product screenshots, got "+screenshots);
  if(words<1800)bad.push(lang+": homepage is too thin, got "+words+" words");
- if(!s.includes("https://r1wbjhb.com/?p=9n57"))bad.push(lang+": affiliate URL missing");
+ if(!s.includes("https://go.apswatchbracelet.com/betano-media"))bad.push(lang+": affiliate URL missing");
  if(!s.includes('FAQPage'))bad.push(lang+": FAQ schema missing");
  if(!s.includes('class="mobile-offer-bar"'))bad.push(lang+": mobile offer bar missing");
  if((s.match(/class="mobile-(?:login|register)"/g)||[]).length!==2)bad.push(lang+": mobile offer bar must contain two links");
@@ -30,7 +30,7 @@ for(let i=1;i<=6;i++){if(!fs.existsSync(path.join(out,"assets","screenshots","be
 const sitemap=fs.readFileSync(path.join(out,"sitemap.xml"),"utf8");
 const entries=[...sitemap.matchAll(/<url><loc>([^<]+)<\/loc><lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod><\/url>/g)].map(m=>({url:m[1],lastmod:m[2]}));
 const count=(sitemap.match(/<url>/g)||[]).length;
-if(count!==166)bad.push("sitemap expected 166 URLs, got "+count);
+if(count!==31)bad.push("main sitemap expected 31 priority URLs, got "+count);
 if((sitemap.match(/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/g)||[]).length!==count)bad.push("every sitemap URL must have a valid lastmod");
 if(entries.length!==count)bad.push("sitemap URL entries must contain exactly one loc followed by one valid lastmod");
 if(new Set(entries.map(e=>e.url)).size!==entries.length)bad.push("sitemap contains duplicate URLs");
@@ -48,8 +48,19 @@ for(const {url,lastmod} of entries){
 }
 const notFound=fs.readFileSync(path.join(out,"404.html"),"utf8");
 if(!/<meta name="robots" content="noindex,follow">/.test(notFound))bad.push("404 page must be noindex,follow");
+const hotSitemap=fs.readFileSync(path.join(out,"sitemap-br-hot.xml"),"utf8");
+const hotEntries=[...hotSitemap.matchAll(/<url><loc>([^<]+)<\/loc><lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod><\/url>/g)].map(m=>({url:m[1],lastmod:m[2]}));
+if(hotEntries.length!==9)bad.push("Brazil hot sitemap expected 9 URLs, got "+hotEntries.length);
+for(const {url} of hotEntries){
+ const rel=new URL(url).pathname.replace(/^\//,""),file=path.join(out,rel,"index.html");
+ if(!fs.existsSync(file)){bad.push(url+": hot sitemap target missing");continue;}
+ const s=fs.readFileSync(file,"utf8"),canonical=s.match(/<link rel="canonical" href="([^"]+)">/)?.[1];
+ if(canonical!==url)bad.push(url+": hot canonical mismatch "+(canonical||"missing"));
+ if((s.match(/<h1(?:\s|>)/g)||[]).length!==1)bad.push(url+": expected exactly one H1");
+ if((s.match(/go\.apswatchbracelet\.com\/betano-media/g)||[]).length<5)bad.push(url+": insufficient offer links");
+}
 const robots=fs.readFileSync(path.join(out,"robots.txt"),"utf8");
-if(!/^User-agent: \*\nAllow: \/\nSitemap: https:\/\/betano\.media\/sitemap\.xml\n$/.test(robots))bad.push("robots.txt must allow crawling and declare the canonical sitemap");
+if(!robots.includes("Sitemap: https://betano.media/sitemap.xml\n")||!robots.includes("Sitemap: https://betano.media/sitemap-br-hot.xml\n"))bad.push("robots.txt must declare both sitemaps");
 const llmsPath=path.join(out,"llms.txt");
 if(!fs.existsSync(llmsPath))bad.push("llms.txt missing");
 else{
@@ -60,5 +71,5 @@ else{
 }
 if(!fs.existsSync(path.join(out,"4e7db1d1c6f24e98a73c42c699f5eb41.txt")))bad.push("standard IndexNow key file missing");
 if(bad.length){console.error(bad.join("\n"));process.exit(1);}
-console.log("Checked "+html.length+" HTML files and "+count+" sitemap URLs");
+console.log("Checked "+html.length+" HTML files, "+count+" priority URLs and "+hotEntries.length+" Brazilian hot URLs");
 
